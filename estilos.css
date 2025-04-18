@@ -1,0 +1,235 @@
+/* ==== CONFIGURACIÓN GENERAL ==== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #111;
+  color: white;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* ==== NAVBAR ==== */
+.menu-bg {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.navbar-nav .nav-link {
+  color: white;
+  text-shadow: 0 0 6px #ffffff;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  background-color: #2ad8d8;
+  color: white;
+}
+.nav-boton {
+  font-weight: bold;
+}
+
+
+/* Botón Descargar */
+.btn-download {
+  background-color: #2AD8D8;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #25c0c0;
+  color: white;
+}
+
+/* ==== HERO / INICIO ==== */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.video-fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+/* Contenedor del logo + texto */
+.contenido-hero {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px; /* ligeramente bajado todo el bloque */
+}
+
+/* Logo gif */
+.logo-gif {
+  width: 950px;
+  max-width: 90%;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+  border-radius: 20px;
+  margin-bottom: 65px; /* bajamos el texto separándolo del logo */
+}
+
+/* Texto "Fiesta Finder" */
+.titulo-central {
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0 0 6px #ffffff;
+  margin-top: -80px; /* lo subimos ligeramente */
+  margin-bottom: 0;
+}
+
+
+/* ==== SOBRE NOSOTROS (Slider estilo Apple) ==== */
+.hero-section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.hero-slide {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-slide.active {
+  left: 0;
+}
+.overlay-text {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+.overlay-text h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 10px;
+}
+.overlay-text p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* ==== SECCIONES ==== */
+.section {
+  padding: 100px 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section-title {
+  font-size: 3rem;
+  color: #2ad8d8;
+  margin-bottom: 30px;
+}
+.section-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ==== BENEFICIOS ==== */
+.card-translucent {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.card-translucent:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+/* ==== GALERÍA ==== */
+.galeria-img {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.galeria-img:hover {
+  transform: scale(1.05);
+}
+
+/* ==== CONTACTO ==== */
+input, textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+}
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #2ad8d8;
+}
+
+/* ==== ANIMACIONES ==== */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== RESPONSIVO ==== */
+@media (max-width: 768px) {
+  .titulo-central {
+    font-size: 2.5rem;
+  }
+  .overlay-text h1 {
+    font-size: 2rem;
+  }
+  .overlay-text p {
+    font-size: 1rem;
+  }
+}
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .contenido-hero {
+    margin-top: 20px; /* menos espacio en celulares */
+  }
+
+  .logo-gif {
+      width: 85%;
+      margin-bottom: 30px;
+  }
+
+  .titulo-central {
+    font-size: 2.5rem;
+    margin-top: -10px;
+  }
+}

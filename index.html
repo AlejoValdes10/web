@@ -1,141 +1,244 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fiesta Finder</title>
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="estilos.css"/>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<!-- NAVBAR FIJO CENTRADO -->
-<nav class="navbar navbar-expand-lg fixed-top menu-bg">
-  <div class="container justify-content-center">
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
-        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-        <li class="nav-item"><a class="nav-link nav-boton" href="#contacto">Contacto</a></li>
-      </ul>
-    
-
-       <!-- Botón descargar alineado a la derecha -->
-       <div class="ms-auto">
-        <a href="#" class="btn btn-download d-flex align-items-center">
-          Descargar
-          <img src="img/descarga.gif" alt="gif logo" class="ms-2" style="height: 30px;" />
-        </a>
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar navbar-expand-lg fixed-top menu-bg">
+    <div class="container-fluid">
+      <!-- Botón toggle para móviles -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Contenido del navbar -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Contenedor flexible para centrado visual -->
+        <div class="d-flex w-100 position-relative">
+          <!-- Enlaces centrados visualmente -->
+          <ul class="navbar-nav mx-auto nav-center-items">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+            <li class="nav-item"><a class="nav-link nav-boton" href="#contacto">Contacto</a></li>
+          </ul>
+          
+          <!-- Botón descargar alineado a la derecha -->
+          <div class="position-absolute end-0">
+            <a href="#" class="btn btn-download d-flex align-items-center">
+              Descargar
+              <img src="img/descarga.gif" alt="Icono descarga" class="ms-2 download-gif">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 
-<!-- HERO (Video de fondo + Logo) -->
-<header class="hero" id="inicio">
-  <div class="hero-overlay"></div>
-  <video autoplay loop muted playsinline class="video-fondo">
-    <source src="img/luna.mp4" type="video/mp4" />
-  </video>
-  <div class="contenido-hero text-center">
-    <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif">
-    <h1 class="titulo-central">Fiesta Finder</h1>
-  </div>
-</header>
+  <!-- ==================== HERO SECTION ==================== -->
+  <header class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <video autoplay loop muted playsinline class="video-fondo">
+      <source src="img/luna.mp4" type="video/mp4">
+    </video>
+    <div class="contenido-hero text-center">
+      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif">
+      <h1 class="titulo-central">Fiesta Finder</h1>
+    </div>
+  </header>
 
-<!-- SOBRE NOSOTROS estilo Apple -->
+  <!-- ==================== SOBRE NOSOTROS ==================== -->
 <section id="sobre-nosotros" class="hero-section">
-  <div class="hero-slide active" style="background-image: url('img/slide1.jpg');">
-    <div class="overlay-text">
-      <h1>Descubre Eventos Inolvidables</h1>
-      <p>Explora las mejores fiestas y eventos en tu ciudad con Fiesta Finder.</p>
+  <!-- Sección inicial (visible primero) -->
+  <div class="initial-section active">
+    <div class="initial-content">
+      <h1>Nuestra Historia</h1>
+      <p>Fiesta Finder comenzó como una idea entre amigos para resolver un problema simple: encontrar fiestas auténticas sin complicaciones.</p>
     </div>
   </div>
-  <div class="hero-slide" style="background-image: url('img/slide2.jpg');">
-    <div class="overlay-text">
-      <h1>Conecta con la Diversión</h1>
-      <p>Desde conciertos hasta festivales, tenemos lo que buscas.</p>
-    </div>
-  </div>
-  <div class="hero-slide" style="background-image: url('img/slide3.jpg');">
-    <div class="overlay-text">
-      <h1>Vive la Experiencia</h1>
-      <p>Reserva tu lugar y prepárate para una noche inolvidable.</p>
-    </div>
-  </div>
-</section>
 
-<!-- BENEFICIOS MODERNIZADOS -->
-<section id="beneficios" class="section bg-dark-blue fade-in">
-  <div class="container text-center">
-    <h2 class="section-title">¿Por Qué Usar Fiesta Finder?</h2>
-    <div class="row mt-5">
-      <div class="col-md-4">
-        <div class="card-translucent">
-          <h4>Eventos Cercanos</h4>
-          <p>Filtra por ubicación, fecha o categoría y encuentra lo mejor cerca de ti.</p>
+  <!-- Carrusel principal -->
+  <div class="about-carousel">
+    <!-- Slide 1 - Tu amigo -->
+    <div class="carousel-slide">
+      <div class="row h-100 g-0">
+        <div class="col-md-6 h-100 slide-image" style="background-image: url('img/amigo.jpg');"></div>
+        <div class="col-md-6 h-100 slide-content bg-dark-blue">
+          <div class="content-wrapper">
+            <h2>CEO & Fundador</h2>
+            <img src="img/amigo-perfil.jpg" alt="CEO" class="profile-img">
+            <h3>Carlos Rodríguez</h3>
+            <p class="role">Visionario Tecnológico</p>
+            <p class="bio">Creó el algoritmo revolucionario que analiza patrones de asistencia para predecir los mejores eventos. Su experiencia en marketing digital da vida a la app.</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card-translucent">
-          <h4>Experiencia Personalizada</h4>
-          <p>Recibe recomendaciones inteligentes basadas en tus gustos y asistencias previas.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card-translucent">
-          <h4>Soporte en Tiempo Real</h4>
-          <p>Asistencia inmediata por chat o correo ante cualquier duda o problema.</p>
+    </div>
+
+    <!-- Slide 2 - Tu perfil -->
+    <div class="carousel-slide">
+      <div class="row h-100 g-0">
+        <div class="col-md-6 h-100 slide-image" style="background-image: url('img/tu-foto-fondo.jpg');"></div>
+        <div class="col-md-6 h-100 slide-content bg-dark-blue">
+          <div class="content-wrapper">
+            <h2>Desarrollador Principal</h2>
+            <img src="img/tu-perfil.jpg" alt="Cofundador" class="profile-img">
+            <h3>Tu Nombre</h3>
+            <p class="role">Arquitecto de la Experiencia</p>
+            <p class="bio">Diseñó la interfaz galardonada y el sistema de reservas instantáneas. Encargado de hacer que cada interacción con la app sea mágica.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Flechas de navegación -->
+  <button class="carousel-arrow prev-arrow">&#10094;</button>
+  <button class="carousel-arrow next-arrow">&#10095;</button>
 </section>
 
-<!-- GALERÍA -->
-<section id="galeria" class="section fade-in">
-  <div class="container text-center">
-    <h2 class="section-title">Momentos Fiesta Finder</h2>
-    <p class="section-description">Así se viven nuestras experiencias: luces, energía y mucha diversión.</p>
-    <div class="row mt-4 g-4">
-      <div class="col-md-4"><img src="img/galeria1.jpg" class="img-fluid galeria-img" alt="Evento 1"></div>
-      <div class="col-md-4"><img src="img/galeria2.jpg" class="img-fluid galeria-img" alt="Evento 2"></div>
-      <div class="col-md-4"><img src="img/galeria3.jpg" class="img-fluid galeria-img" alt="Evento 3"></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="section bg-dark-blue fade-in">
-  <div class="container text-center">
-    <h2 class="section-title">Contáctanos</h2>
-    <p class="section-description">¿Tienes un evento y quieres publicarlo? ¿Eres usuario y tienes dudas? ¡Estamos para ayudarte!</p>
-    <form class="mt-4">
-      <div class="row">
-        <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Nombre" required></div>
-        <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="Correo" required></div>
+  <!-- ==================== BENEFICIOS ==================== -->
+  <section id="beneficios" class="section bg-dark-blue fade-in">
+    <div class="container text-center">
+      <h2 class="section-title">¿Por Qué Usar Fiesta Finder?</h2>
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <div class="card-translucent">
+            <h4>Eventos Cercanos</h4>
+            <p>Filtra por ubicación, fecha o categoría y encuentra lo mejor cerca de ti.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-translucent">
+            <h4>Experiencia Personalizada</h4>
+            <p>Recibe recomendaciones inteligentes basadas en tus gustos y asistencias previas.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-translucent">
+            <h4>Soporte en Tiempo Real</h4>
+            <p>Asistencia inmediata por chat o correo ante cualquier duda o problema.</p>
+          </div>
+        </div>
       </div>
-      <textarea class="form-control mb-3" rows="4" placeholder="Tu mensaje"></textarea>
-      <button type="submit" class="btn btn-outline-light">Enviar</button>
-    </form>
-  </div>
-</section>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ==================== GALERÍA ==================== -->
+  <section id="galeria" class="section fade-in">
+    <div class="container text-center">
+      <h2 class="section-title">Momentos Fiesta Finder</h2>
+      <p class="section-description">Así se viven nuestras experiencias: luces, energía y mucha diversión.</p>
+      <div class="row mt-4 g-4">
+        <div class="col-md-4"><img src="img/galeria1.jpg" class="img-fluid galeria-img" alt="Evento 1"></div>
+        <div class="col-md-4"><img src="img/galeria2.jpg" class="img-fluid galeria-img" alt="Evento 2"></div>
+        <div class="col-md-4"><img src="img/galeria3.jpg" class="img-fluid galeria-img" alt="Evento 3"></div>
+      </div>
+    </div>
+  </section>
 
-<!-- Slide automático sobre nosotros -->
-<script>
-  const slides = document.querySelectorAll('.hero-slide');
+  <!-- ==================== CONTACTO ==================== -->
+  <section id="contacto" class="section bg-dark-blue fade-in">
+    <div class="container text-center">
+      <h2 class="section-title">Contáctanos</h2>
+      <p class="section-description">¿Tienes un evento y quieres publicarlo? ¿Eres usuario y tienes dudas? ¡Estamos para ayudarte!</p>
+      <form class="mt-4">
+        <div class="row">
+          <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Nombre" required></div>
+          <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="Correo" required></div>
+        </div>
+        <textarea class="form-control mb-3" rows="4" placeholder="Tu mensaje"></textarea>
+        <button type="submit" class="btn btn-outline-light">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script para el slider automático -->
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 6000);
+
+
+/* JS para sincronizar carrusel con miembros */
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Elementos del DOM
+  const initialSection = document.querySelector('.initial-section');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevArrow = document.querySelector('.prev-arrow');
+  const nextArrow = document.querySelector('.next-arrow');
+  
   let currentSlide = 0;
-
-  setInterval(() => {
+  let autoChangeInterval;
+  
+  // Mostrar sección inicial y luego carrusel
+  function startPresentation() {
+    initialSection.classList.add('active');
+    
+    setTimeout(() => {
+      initialSection.classList.remove('active');
+      slides[0].classList.add('active');
+      startAutoRotation();
+    }, 10000); // 10 segundos
+  }
+  
+  // Rotación automática
+  function startAutoRotation() {
+    autoChangeInterval = setInterval(() => {
+      goToNextSlide();
+    }, 10000); // Cambia cada 10 segundos
+  }
+  
+  // Navegación
+  function goToNextSlide() {
     slides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add('active');
-  }, 6000);
-</script>
+  }
+  
+  function goToPrevSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+  
+  // Event listeners
+  nextArrow.addEventListener('click', () => {
+    clearInterval(autoChangeInterval);
+    goToNextSlide();
+    startAutoRotation();
+  });
+  
+  prevArrow.addEventListener('click', () => {
+    clearInterval(autoChangeInterval);
+    goToPrevSlide();
+    startAutoRotation();
+  });
+  
+  // Iniciar presentación - fin sobre nosotros
+  startPresentation();
+});
+  </script>
 
 </body>
 </html>

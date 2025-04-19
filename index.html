@@ -16,16 +16,12 @@
   <!-- ==================== NAVBAR ==================== -->
   <nav class="navbar navbar-expand-lg fixed-top menu-bg">
     <div class="container-fluid">
-      <!-- Botón toggle para móviles -->
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <!-- Contenido del navbar -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <!-- Contenedor flexible para centrado visual -->
         <div class="d-flex w-100 position-relative">
-          <!-- Enlaces centrados visualmente -->
           <ul class="navbar-nav mx-auto nav-center-items">
             <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
@@ -34,7 +30,6 @@
             <li class="nav-item"><a class="nav-link nav-boton" href="#contacto">Contacto</a></li>
           </ul>
           
-          <!-- Botón descargar alineado a la derecha -->
           <div class="position-absolute end-0">
             <a href="#" class="btn btn-download d-flex align-items-center">
               Descargar
@@ -59,54 +54,54 @@
   </header>
 
   <!-- ==================== SOBRE NOSOTROS ==================== -->
-<section id="sobre-nosotros" class="hero-section">
-  <!-- Sección inicial (visible primero) -->
-  <div class="initial-section active">
-    <div class="initial-content">
-      <h1>Nuestra Historia</h1>
-      <p>Fiesta Finder comenzó como una idea entre amigos para resolver un problema simple: encontrar fiestas auténticas sin complicaciones.</p>
-    </div>
-  </div>
+  <section id="sobre-nosotros" class="about-section">
+    <div class="about-container">
+      <!-- Slide 1: Historia -->
+      <div class="about-slide active">
+        <div class="logo-history-container">
+          <div class="logo-animation-box">
+            <img src="img/logo.gif" alt="Fiesta Finder" class="logo-gif">
+          </div>
+          <div class="history-text">
+            <h1>Nuestra Historia</h1>
+            <p>Fiesta Finder nació para revolucionar la forma de encontrar eventos. Combinamos inteligencia artificial con datos en tiempo real para ofrecerte <strong>experiencias únicas</strong>.</p>
+          </div>
+        </div>
+      </div>
 
-  <!-- Carrusel principal -->
-  <div class="about-carousel">
-    <!-- Slide 1 - Tu amigo -->
-    <div class="carousel-slide">
-      <div class="row h-100 g-0">
-        <div class="col-md-6 h-100 slide-image" style="background-image: url('img/amigo.jpg');"></div>
-        <div class="col-md-6 h-100 slide-content bg-dark-blue">
-          <div class="content-wrapper">
+      <!-- Slide 2: Jerson -->
+      <div class="about-slide">
+        <div class="profile-card">
+          <div class="profile-image-box">
+            <h2>Programador & Analista</h2>
+            <img src="img/jerson.jpg" alt="Jerson Espitia" class="profile-image">
+          </div>
+          <div class="profile-info">
+            <h3>Jerson Espitia</h3>
+            <p>Desarrollador del algoritmo de recomendaciones. Especialista en seguridad y escalabilidad de la plataforma.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Cristian -->
+      <div class="about-slide">
+        <div class="profile-card">
+          <div class="profile-image-box">
             <h2>CEO & Fundador</h2>
-            <img src="img/amigo-perfil.jpg" alt="CEO" class="profile-img">
-            <h3>Carlos Rodríguez</h3>
-            <p class="role">Visionario Tecnológico</p>
-            <p class="bio">Creó el algoritmo revolucionario que analiza patrones de asistencia para predecir los mejores eventos. Su experiencia en marketing digital da vida a la app.</p>
+            <img src="img/cristian.jpg" alt="Cristian Valdés" class="profile-image">
+          </div>
+          <div class="profile-info">
+            <h3>Cristian Valdés</h3>
+            <p>Visionario detrás del proyecto. Lidera el equipo con enfoque en experiencia de usuario e innovación constante.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 2 - Tu perfil -->
-    <div class="carousel-slide">
-      <div class="row h-100 g-0">
-        <div class="col-md-6 h-100 slide-image" style="background-image: url('img/tu-foto-fondo.jpg');"></div>
-        <div class="col-md-6 h-100 slide-content bg-dark-blue">
-          <div class="content-wrapper">
-            <h2>Desarrollador Principal</h2>
-            <img src="img/tu-perfil.jpg" alt="Cofundador" class="profile-img">
-            <h3>Tu Nombre</h3>
-            <p class="role">Arquitecto de la Experiencia</p>
-            <p class="bio">Diseñó la interfaz galardonada y el sistema de reservas instantáneas. Encargado de hacer que cada interacción con la app sea mágica.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Flechas de navegación -->
-  <button class="carousel-arrow prev-arrow">&#10094;</button>
-  <button class="carousel-arrow next-arrow">&#10095;</button>
-</section>
+    <!-- Flechas de navegación -->
+    <button class="carousel-arrow prev-arrow">❮</button>
+    <button class="carousel-arrow next-arrow">❯</button>
+  </section>
 
   <!-- ==================== BENEFICIOS ==================== -->
   <section id="beneficios" class="section bg-dark-blue fade-in">
@@ -167,78 +162,53 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script para el slider automático -->
+  <!-- Script para el carrusel de Sobre Nosotros -->
   <script>
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.about-slide');
+      const prevBtn = document.querySelector('.prev-arrow');
+      const nextBtn = document.querySelector('.next-arrow');
+      let currentIndex = 0;
+      let autoSlideInterval;
 
-    setInterval(() => {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }, 6000);
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+      }
 
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
 
-/* JS para sincronizar carrusel con miembros */
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Elementos del DOM
-  const initialSection = document.querySelector('.initial-section');
-  const slides = document.querySelectorAll('.carousel-slide');
-  const prevArrow = document.querySelector('.prev-arrow');
-  const nextArrow = document.querySelector('.next-arrow');
-  
-  let currentSlide = 0;
-  let autoChangeInterval;
-  
-  // Mostrar sección inicial y luego carrusel
-  function startPresentation() {
-    initialSection.classList.add('active');
-    
-    setTimeout(() => {
-      initialSection.classList.remove('active');
-      slides[0].classList.add('active');
-      startAutoRotation();
-    }, 10000); // 10 segundos
-  }
-  
-  // Rotación automática
-  function startAutoRotation() {
-    autoChangeInterval = setInterval(() => {
-      goToNextSlide();
-    }, 10000); // Cambia cada 10 segundos
-  }
-  
-  // Navegación
-  function goToNextSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }
-  
-  function goToPrevSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }
-  
-  // Event listeners
-  nextArrow.addEventListener('click', () => {
-    clearInterval(autoChangeInterval);
-    goToNextSlide();
-    startAutoRotation();
-  });
-  
-  prevArrow.addEventListener('click', () => {
-    clearInterval(autoChangeInterval);
-    goToPrevSlide();
-    startAutoRotation();
-  });
-  
-  // Iniciar presentación - fin sobre nosotros
-  startPresentation();
-});
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 8000);
+      }
+
+      nextBtn.addEventListener('click', () => {
+        clearInterval(autoSlideInterval);
+        nextSlide();
+        startAutoSlide();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        clearInterval(autoSlideInterval);
+        prevSlide();
+        startAutoSlide();
+      });
+
+      showSlide(0);
+      startAutoSlide();
+
+      const carousel = document.querySelector('.about-container');
+      carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+      carousel.addEventListener('mouseleave', startAutoSlide);
+    });
   </script>
-
 </body>
 </html>

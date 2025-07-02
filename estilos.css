@@ -191,8 +191,8 @@ body {
 }
 
 .logo-gif {
-  width: 950px;
-  max-width: 90%;
+  width: min(100%, 600px);
+  height: auto;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
   border-radius: 20px;
   margin-bottom: 65px;
@@ -775,12 +775,12 @@ body {
 }
 
 .footer-links a {
-  color: rgba(255,255,255,0.7);
+  color: #2ad8d8;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #2ad8d8;
+  color: rgb(179, 177, 177);
   text-decoration: none;
 }
 
@@ -985,16 +985,20 @@ body {
   }
 
   /* Sobre Nosotros */
+  .about-section, .about-slide {
+    height: auto;
+    min-height: 100vh;
+  }
   
-
-
-
-
-
-
-
-
-
+  .team-cards {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .history-content {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
   
   /* Galería */
   .gallery-row {
@@ -1040,7 +1044,26 @@ body {
     font-size: 1.8rem;
   }
 
+  /* Hero */
+  .titulo-central {
+    font-size: 2.5rem;
+    margin-top: -40px;
+  }
 
+  /* Sobre Nosotros */
+  .history-title {
+    font-size: 2rem;
+  }
+
+  .highlight-box p {
+    font-size: 1rem;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
 
   /* Beneficios */
   .benefit-card {

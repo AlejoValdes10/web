@@ -19,31 +19,31 @@
 
   <!-- ==================== NAVBAR ==================== -->
   <nav class="navbar navbar-expand-lg fixed-top menu-bg">
-  <div class="container-fluid">
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="d-flex w-100 position-relative">
-        <ul class="navbar-nav mx-auto nav-center-items">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-          <li class="nav-item"><a class="nav-link nav-boton" href="#contacto">Contacto</a></li>
-        </ul>
-        
-        <div class="position-absolute end-0">
-          <a href="#" class="btn btn-download d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#downloadModal">
-            Descargar
-            <img src="img/descargar.gif" alt="Icono descarga" class="ms-2 download-gif">
-          </a>
+    <div class="container-fluid">
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="d-flex w-100 position-relative">
+          <ul class="navbar-nav mx-auto nav-center-items">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+            <li class="nav-item"><a class="nav-link nav-boton" href="#contacto">Contacto</a></li>
+          </ul>
+          
+          <div class="position-absolute end-0">
+            <a href="#" class="btn btn-download d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#downloadModal">
+              Descargar
+              <img src="img/descargar.gif" alt="Icono descarga" class="ms-2 download-gif">
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- ==================== HERO SECTION ==================== -->
   <header class="hero" id="inicio">
@@ -52,7 +52,7 @@
       <source src="img/luna.mp4" type="video/mp4">
     </video>
     <div class="contenido-hero text-center">
-      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif">
+      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif" loading="lazy">
       <h1 class="titulo-central">Fiesta Finder</h1>
     </div>
   </header>
@@ -63,7 +63,7 @@
       <!-- Slide 1 - Historia (centrado verticalmente) -->
       <div class="about-slide active interactive-bg">
         <div class="particles-container" id="particles-js"></div>
-        <div class="history-content" style="top: 50%; transform: translate(-50%, -50%);">
+        <div class="history-content">
           <h1 class="history-title">Nuestra Historia</h1>
           <div class="highlight-box">
             <p>Fiesta Finder nació para terminar con las fiestas aburridas. Con datos en tiempo real para mostrarte <strong>los eventos más vibrantes</strong> cerca de ti.</p>
@@ -82,7 +82,7 @@
               <div class="card-front">
                 <h3>Jerson Espitia</h3>
                 <div class="member-photo">
-                  <img src="img/jerson.png" alt="Jerson Espitia">
+                  <img src="img/jerson.png" alt="Jerson Espitia" loading="lazy">
                 </div>
                 <div class="card-icon">
                   <i class="fas fa-code"></i>
@@ -99,7 +99,7 @@
               <div class="card-front">
                 <h3>Cristian Valdés</h3>
                 <div class="member-photo">
-                  <img src="img/alejo.png" alt="Cristian Valdés">
+                  <img src="img/alejo.png" alt="Cristian Valdés" loading="lazy">
                 </div>
                 <div class="card-icon">
                   <i class="fas fa-lightbulb"></i>
@@ -182,14 +182,14 @@
           <!-- Fila 1 -->
           <div class="gallery-row">
             <div class="gallery-item tall">
-              <img src="img/img1.gif" alt="Evento 1">
+              <img src="img/img1.gif" alt="Evento 1" loading="lazy">
               <div class="gallery-overlay">
                 <h5>Fiesta Festival EDM</h5>
                 <p>Más de 5,000 asistentes disfrutando de los mejores DJs</p>
               </div>
             </div>
             <div class="gallery-item">
-              <img src="img/img5.webp" alt="Evento 2">
+              <img src="img/img5.webp" alt="Evento 2" loading="lazy">
               <div class="gallery-overlay">
                 <h5>Club Nocturno Premium</h5>
                 <p>Experiencias VIP con servicio personalizado</p>
@@ -200,21 +200,21 @@
           <!-- Fila 2 -->
           <div class="gallery-row">
             <div class="gallery-item">
-              <img src="img/img3.gif" alt="Evento 3">
+              <img src="img/img3.gif" alt="Evento 3" loading="lazy">
               <div class="gallery-overlay">
                 <h5>Terraza Sunset Sessions</h5>
                 <p>Atardeceres mágicos con los mejores cócteles</p>
               </div>
             </div>
             <div class="gallery-item wide">
-              <img src="img/img4.gif" alt="Evento 4">
+              <img src="img/img4.gif" alt="Evento 4" loading="lazy">
               <div class="gallery-overlay">
                 <h5>Discotecas Exclusivas</h5>
                 <p>Los mejores ambientes para bailar toda la noche</p>
               </div>
             </div>
             <div class="gallery-item">
-              <img src="img/img2.gif" alt="Evento 5">
+              <img src="img/img2.gif" alt="Evento 5" loading="lazy">
               <div class="gallery-overlay">
                 <h5>Conciertos En Vivo</h5>
                 <p>Artistas nacionales e internacionales en los mejores recintos</p>
@@ -225,21 +225,21 @@
           <!-- Fila 3 -->
           <div class="gallery-row">
             <div class="gallery-item">
-              <img src="img/img6.webp" alt="Evento 6">
+              <img src="img/img6.webp" alt="Evento 6" loading="lazy">
               <div class="gallery-overlay">
                 <h5>Bares Temáticos</h5>
                 <p>Ambientes únicos para cada gusto</p>
               </div>
             </div>
             <div class="gallery-item tall">
-              <img src="img/img7.jpg" alt="Evento 7">
+              <img src="img/img7.jpg" alt="Evento 7" loading="lazy">
               <div class="gallery-overlay">
                 <h5>After Parties</h5>
                 <p>La fiesta continúa hasta el amanecer</p>
               </div>
             </div>
             <div class="gallery-item">
-              <img src="img/img8.gif" alt="Evento 8">
+              <img src="img/img8.jpg" alt="Evento 8" loading="lazy">
               <div class="gallery-overlay">
                 <h5>Eventos Especiales</h5>
                 <p>Celebraciones únicas e inolvidables</p>
@@ -297,10 +297,10 @@
                 </div>
                 
                 <div class="social-icons">
-                  <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                  <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                  <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                  <a href="https://facebook.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://instagram.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://twitter.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://youtube.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
               </div>
             </div>
@@ -369,11 +369,11 @@
         <div class="col-md-4 footer-col">
           <h4>Descarga la App</h4>
           <div class="app-buttons">
-            <a href="#" class="app-btn">
+            <a href="https://play.google.com/store/apps/details?id=com.fiestafinder" class="app-btn" target="_blank">
               <i class="fab fa-google-play"></i>
               <span>Google Play</span>
             </a>
-            <a href="#" class="app-btn">
+            <a href="https://apps.apple.com/app/fiesta-finder/id123456789" class="app-btn" target="_blank">
               <i class="fab fa-apple"></i>
               <span>App Store</span>
             </a>
@@ -399,17 +399,17 @@
           <p class="mb-4">Escanea el código QR con tu celular para descargar la app</p>
           
           <div class="qr-container">
-            <img src="img/qrrr.png" alt="QR Code para descargar Fiesta Finder" class="img-fluid qr-code">
+            <img src="img/qrrr.png" alt="QR Code para descargar Fiesta Finder" class="img-fluid qr-code" loading="lazy">
             <div class="qr-overlay"></div>
           </div>
           
           <div class="download-links mt-4">
             <p class="mb-3">O descarga directamente:</p>
             <div class="d-flex justify-content-center gap-3">
-              <a href="modal-body text-center p-5" class="btn btn-store">
+              <a href="https://play.google.com/store/apps/details?id=com.fiestafinder" class="btn btn-store" target="_blank">
                 <i class="fab fa-google-play"></i> Google Play
               </a>
-              <a href="" class="btn btn-store">
+              <a href="https://apps.apple.com/app/fiesta-finder/id123456789" class="btn btn-store" target="_blank">
                 <i class="fab fa-apple"></i> App Store
               </a>
             </div>

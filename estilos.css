@@ -206,6 +206,7 @@ body {
   margin-bottom: 0;
 }
 
+
 /* ==================== SOBRE NOSOTROS ==================== */
 .about-section {
   height: 100vh;
@@ -430,6 +431,13 @@ body {
 }
 
 /* ==================== BENEFICIOS ==================== */
+/* NUEVO */
+#beneficios .row {
+  align-items: stretch; /* Fuerza a todas las columnas a igual altura */
+}
+.benefit-card {
+  height: 100%; /* Ahora sí heredará la altura de la columna */
+}
 .benefit-card {
   border-radius: 25px;
   padding: 30px 25px;
@@ -437,9 +445,7 @@ body {
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-  z-index: 1;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  border: none;
   display: flex;
   flex-direction: column;
 }
@@ -488,6 +494,7 @@ body {
 }
 
 .benefit-card p {
+  margin-bottom: 0; /* Elimina espacio extra bajo el párrafo */
   color: rgba(255,255,255,0.8);
   font-size: 1.05rem;
   flex-grow: 1;
@@ -874,68 +881,68 @@ body {
 /* ==================== RESPONSIVE ==================== */
 /* ==================== MEDIA QUERIES PARA NAVBAR ==================== */
 
-/* Tabletas (768px en adelante) */
-@media (min-width: 768px) {
-  .navbar-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+/* ==================== NAVBAR RESPONSIVE ==================== */
+@media (max-width: 991.98px) {
+  /* Ajustes para tablets y móviles */
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
   }
-  
+
+  .nav-center-items {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .navbar-nav .nav-link {
-    margin: 0 10px;
+    text-align: center;
+    margin: 5px 0;
+    padding: 10px;
     font-size: 1.2rem;
   }
-  
+
+  /* Botón "Descargar" centrado en móviles */
+  .position-absolute.end-0 {
+    position: static !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
   .btn-download {
-    margin: 0;
-    position: absolute;
-    right: 15px;
+    margin: 0 auto;
   }
 }
 
-/* Pantallas grandes (992px en adelante) */
-@media (min-width: 992px) {
-  .nav-center-items {
-    flex-direction: row;
+@media (max-width: 767.98px) {
+  /* Ajustes específicos para móviles pequeños */
+  .navbar-toggler {
+    margin-right: 0;
   }
-  
-  .navbar-nav .nav-link {
-    margin: 0 15px;
+
+  .logo-gif {
+    margin-bottom: 40px; /* Reduce espacio debajo del logo en móviles */
   }
-  
-  .navbar-collapse {
-    padding: 0;
+
+  .titulo-central {
+    font-size: 3rem; /* Tamaño más pequeño para móviles */
+    margin-top: -50px;
   }
 }
 
-/* Pantallas grandes (1200px en adelante) - Ajustes para PC */
-@media (min-width: 1200px) {
-  /* Galería en PC - Solución para espacios raros */
-  .gallery-vertical-scroll {
-    padding: 30px;
+@media (max-width: 575.98px) {
+  /* Ajustes ultra pequeños */
+  .navbar {
+    padding: 10px 0;
   }
-  
-  .gallery-row {
-    gap: 25px;
-    margin-bottom: 25px;
-  }
-  
-  .gallery-item {
-    flex: 1 1 calc(33.333% - 25px);
-  }
-  
-  .gallery-item.tall {
-    height: 450px;
-  }
-  
-  .gallery-item.wide {
-    flex: 2 1 calc(66.666% - 25px);
+
+  .navbar-toggler-icon {
+    width: 1.2em;
+    height: 1.2em;
   }
 }
-
-/* Tablets grandes y pantallas medianas (992px - 1199px) */
-@media (max-width: 1199px) {
   /* Sobre Nosotros */
   .history-content {
     width: 90%;
@@ -959,46 +966,58 @@ body {
     width: 170px;
     height: 230px;
   }
+  /* Ajustes para flechas del carrusel */
+.carousel-arrow {
+  top: 60%; /* Bajamos las flechas del centro */
+}
+
+@media (max-width: 767px) {
+  .carousel-arrow {
+    width: 50px; /* Más pequeñas en móviles */
+    height: 50px;
+    font-size: 1.8rem;
+    top: 70%; /* Bajamos aún más en móviles */
+  }
   
-  /* Beneficios */
-  .benefit-card {
-    min-height: 350px;
+  .prev-arrow {
+    left: 10px; /* Más cerca del borde */
+  }
+  
+  .next-arrow {
+    right: 10px; /* Más cerca del borde */
+  }
+}
+@media (max-width: 575px) {
+  .history-title {
+    font-size: 2.5rem;
+  }
+  
+  .team-title {
+    font-size: 2rem;
+  }
+  
+  .member-photo {
+    width: 150px;
+    height: 200px;
+  }
+  
+  .card-back h4 {
+    font-size: 1.1rem;
+  }
+  
+  .card-back p {
+    font-size: 0.85rem;
   }
 }
 
-/* Tablets (768px - 991px) */
-@media (max-width: 991px) {
-  /* Navbar */
-  .navbar-nav {
-    text-align: center;
-  }
   
-  .navbar .position-absolute {
-    position: static !important;
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
+  /* Beneficios */
+/* Responsive - Ajusta altura solo en móviles */
+@media (max-width: 767px) {
+  .benefit-card {
+    min-height: auto;
   }
-  
-  .navbar-nav .nav-link {
-    margin: 5px 0;
-  }
-
-  /* Sobre Nosotros */
-  .about-section, .about-slide {
-    height: auto;
-    min-height: 100vh;
-  }
-  
-  .team-cards {
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .history-content {
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+}
   
   /* Galería */
   .gallery-row {
@@ -1035,7 +1054,6 @@ body {
   .section {
     padding: 70px 0;
   }
-}
 
 /* Móviles pequeños (hasta 575px) */
 @media (max-width: 575px) {

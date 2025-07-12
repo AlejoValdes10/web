@@ -52,8 +52,12 @@
       <source src="img/luna.mp4" type="video/mp4">
     </video>
     <div class="contenido-hero text-center">
-      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif" loading="lazy">
+      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif" loading="lazy" decoding="async">
       <h1 class="titulo-central">Fiesta Finder</h1>
+    </div>
+    <!-- Flecha indicadora de scroll (nuevo) -->
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </header>
 
@@ -82,7 +86,7 @@
             <div class="card-front">
               <h3>Jerson Espitia</h3>
               <div class="member-photo">
-                <img src="img/jerson.png" alt="Jerson Espitia" loading="lazy">
+                <img src="img/jerson.png" alt="Jerson Espitia" loading="lazy" decoding="async">
               </div>
               <div class="card-icon">
                 <i class="fas fa-code"></i>
@@ -99,7 +103,7 @@
             <div class="card-front">
               <h3>Cristian Valdés</h3>
               <div class="member-photo">
-                <img src="img/alejo.png" alt="Cristian Valdés" loading="lazy">
+                <img src="img/alejo.png" alt="Cristian Valdés" loading="lazy" decoding="async">
               </div>
               <div class="card-icon">
                 <i class="fas fa-lightbulb"></i>
@@ -169,88 +173,96 @@
   <!-- Línea divisoria -->
   <hr class="section-divider">
 
-  <!-- ==================== GALERÍA ==================== -->
-  <section id="galeria" class="section fade-in">
-    <div class="container text-center">
-      <h2 class="section-title">Momentos Fiesta Finder</h2>
-      <p class="section-description">Así se viven nuestras experiencias: luces, energía y mucha diversión.</p>
-      
-      <div class="gallery-vertical-container">
-        <div class="gallery-vertical-scroll">
-          <!-- Fila 1 -->
-          <div class="gallery-row">
-            <div class="gallery-item tall">
-              <img src="img/img1.gif" alt="Evento 1" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>Fiesta Festival EDM</h5>
-                <p>Más de 5,000 asistentes disfrutando de los mejores DJs</p>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <img src="img/img5.webp" alt="Evento 2" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>Club Nocturno Premium</h5>
-                <p>Experiencias VIP con servicio personalizado</p>
-              </div>
-            </div>
+<!-- ==================== GALERÍA ==================== -->
+<section id="galeria" class="section fade-in">
+  <div class="container text-center">
+    <h2 class="section-title">Momentos Fiesta Finder</h2>
+    <p class="section-description">Así se viven nuestras experiencias: luces, energía y mucha diversión.</p>
+    
+    <div class="gallery-container">
+      <div class="gallery-grid">
+        <!-- Fila 1 -->
+        <div class="gallery-item">
+          <img src="img/img1.gif" alt="Evento 1" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>Fiesta Festival EDM</h5>
+            <p>Más de 5,000 asistentes disfrutando de los mejores DJs</p>
           </div>
-          
-          <!-- Fila 2 -->
-          <div class="gallery-row">
-            <div class="gallery-item">
-              <img src="img/img3.gif" alt="Evento 3" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>Terraza Sunset Sessions</h5>
-                <p>Atardeceres mágicos con los mejores cócteles</p>
-              </div>
-            </div>
-            <div class="gallery-item wide">
-              <img src="img/img4.gif" alt="Evento 4" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>Discotecas Exclusivas</h5>
-                <p>Los mejores ambientes para bailar toda la noche</p>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <img src="img/img2.gif" alt="Evento 5" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>Conciertos En Vivo</h5>
-                <p>Artistas nacionales e internacionales en los mejores recintos</p>
-              </div>
-            </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="img/img5.webp" alt="Evento 2" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>Club Nocturno Premium</h5>
+            <p>Experiencias VIP con servicio personalizado</p>
           </div>
-          
-          <!-- Fila 3 -->
-          <div class="gallery-row">
-            <div class="gallery-item">
-              <img src="img/img6.webp" alt="Evento 6" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>Bares Temáticos</h5>
-                <p>Ambientes únicos para cada gusto</p>
-              </div>
-            </div>
-            <div class="gallery-item tall">
-              <img src="img/img7.jpg" alt="Evento 7" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>After Parties</h5>
-                <p>La fiesta continúa hasta el amanecer</p>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <img src="img/img8.gif" alt="Evento 8" loading="lazy">
-              <div class="gallery-overlay">
-                <h5>Eventos Especiales</h5>
-                <p>Celebraciones únicas e inolvidables</p>
-              </div>
-            </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="img/img3.gif" alt="Evento 3" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>Terraza Sunset Sessions</h5>
+            <p>Atardeceres mágicos con los mejores cócteles</p>
+          </div>
+        </div>
+        
+        <!-- Fila 2 -->
+        <div class="gallery-item">
+          <img src="img/img4.gif" alt="Evento 4" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>Discotecas Exclusivas</h5>
+            <p>Los mejores ambientes para bailar toda la noche</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="img/img2.gif" alt="Evento 5" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>Conciertos En Vivo</h5>
+            <p>Artistas nacionales e internacionales en los mejores recintos</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="img/img6.webp" alt="Evento 6" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>Bares Temáticos</h5>
+            <p>Ambientes únicos para cada gusto</p>
+          </div>
+        </div>
+        
+        <!-- Fila 3 -->
+        <div class="gallery-item">
+          <img src="img/img7.jpg" alt="Evento 7" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>After Parties</h5>
+            <p>La fiesta continúa hasta el amanecer</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="img/img9.avif" alt="Evento 8" loading="lazy" decoding="async">
+          <div class="gallery-overlay">
+            <h5>Eventos Especiales</h5>
+            <p>Celebraciones únicas e inolvidables</p>
+          </div>
+        </div>
+        
+        <!-- Botón para ver más eventos -->
+        <div class="gallery-item download-item">
+          <div class="download-content">
+            <i class="fas fa-plus-circle"></i>
+            <h3>¿Quieres ver más eventos?</h3>
+            <p>Descarga la app para descubrir todos los eventos disponibles</p>
+            <button class="btn btn-download-gallery" data-bs-toggle="modal" data-bs-target="#downloadModal">
+              Descargar App
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Línea divisoria -->
-  <hr class="section-divider">
+  </div>
+</section>
 
   <!-- ==================== CONTACTO ==================== -->
   <section id="contacto" class="section bg-dark-blue fade-in">
@@ -397,7 +409,7 @@
           <p class="mb-4">Escanea el código QR con tu celular para descargar la app</p>
           
           <div class="qr-container">
-            <img src="img/qrrr.png" alt="QR Code para descargar Fiesta Finder" class="img-fluid qr-code" loading="lazy">
+            <img src="img/qrrr.png" alt="QR Code para descargar Fiesta Finder" class="img-fluid qr-code" loading="lazy" decoding="async">
             <div class="qr-overlay"></div>
           </div>
           
@@ -464,25 +476,6 @@
         });
       }
 
-      // ==================== SCROLL GALERÍA VERTICAL ====================
-      const galleryContainer = document.querySelector('.gallery-vertical-container');
-      const galleryScroll = document.querySelector('.gallery-vertical-scroll');
-      
-      let isScrolling = false;
-      
-      galleryContainer.addEventListener('wheel', function(e) {
-        if (!isScrolling) {
-          isScrolling = true;
-          
-          if (e.target.closest('.gallery-vertical-container')) {
-            e.preventDefault();
-            galleryScroll.scrollTop += e.deltaY;
-          }
-          
-          setTimeout(() => { isScrolling = false; }, 100);
-        }
-      });
-
       // ==================== CAROUSEL SOBRE NOSOTROS ====================
       const slides = document.querySelectorAll('.about-slide');
       const prevBtn = document.querySelector('.prev-arrow');
@@ -526,6 +519,34 @@
       carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
       carousel.addEventListener('mouseleave', startAutoSlide);
 
+      // Scroll suave para galería
+      document.querySelectorAll('.gallery-container').forEach(container => {
+        container.addEventListener('wheel', function(e) {
+          if (e.deltaY > 0) {
+            this.scrollTop += 50;
+          } else {
+            this.scrollTop -= 50;
+          }
+          e.preventDefault();
+        });
+      });
+
+      // Scroll suave para flecha indicadora
+      document.querySelector('.scroll-indicator').addEventListener('click', () => {
+        window.scrollTo({
+          top: document.querySelector('#sobre-nosotros').offsetTop,
+          behavior: 'smooth'
+        });
+      });
+
+      // Lazy load mejorado
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        });
+        if (img.complete) img.classList.add('loaded');
+      });
+
       // ==================== ANIMACIÓN SCROLL SECCIONES ====================
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -541,6 +562,5 @@
       });
     });
   </script>
-
 </body>
 </html>

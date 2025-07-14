@@ -429,138 +429,381 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <!-- Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- Anime.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
-  <script>
-    // ==================== INTERACTIVIDAD HISTORIA ====================
-    document.addEventListener('DOMContentLoaded', function() {
-      // Animación del título con anime.js
-      anime({
-        targets: '.history-title',
-        translateY: [-50, 0],
-        opacity: [0, 1],
-        duration: 1200,
-        easing: 'easeOutExpo'
-      });
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ==================== INICIALIZACIONES ====================
+    initAnimations();
+    initParticles();
+    initCarousel();
+    initGallery();
+    initScrollEffects();
+    initLazyLoading();
+    initIntersectionObserver();
+  });
 
-      // Configuración de particles.js
-      if (document.getElementById('particles-js')) {
-        particlesJS('particles-js', {
-          particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: "#2ad8d8" },
-            shape: { type: "circle" },
-            opacity: { value: 0.5, random: true },
-            size: { value: 3, random: true },
-            line_linked: { enable: true, distance: 150, color: "#2ad8d8", opacity: 0.4, width: 1 },
-            move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
-          },
-          interactivity: {
-            detect_on: "canvas",
-            events: {
-              onhover: { enable: true, mode: "repulse" },
-              onclick: { enable: true, mode: "push" },
-              resize: true
-            },
-            modes: {
-              repulse: { distance: 100, duration: 0.4 },
-              push: { particles_nb: 4 }
-            }
-          },
-          retina_detect: true
-        });
-      }
+  // ==================== ANIMACIONES INICIALES ====================
+  function initAnimations() {
+    // Animación del título con anime.js
+    anime({
+      targets: '.history-title',
+      translateY: [-50, 0],
+      opacity: [0, 1],
+      duration: 1200,
+      easing: 'easeOutExpo'
+    });
 
-      // ==================== CAROUSEL SOBRE NOSOTROS ====================
-      const slides = document.querySelectorAll('.about-slide');
-      const prevBtn = document.querySelector('.prev-arrow');
-      const nextBtn = document.querySelector('.next-arrow');
-      let currentIndex = 0;
-      let autoSlideInterval;
-
-      function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[index].classList.add('active');
-      }
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-        resetAutoSlide();
-      }
-
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-        resetAutoSlide();
-      }
-
-      function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 8000);
-      }
-
-      function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-      }
-
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
-
-      showSlide(0);
-      startAutoSlide();
-
-      const carousel = document.querySelector('.about-carousel');
-      carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-      carousel.addEventListener('mouseleave', startAutoSlide);
-
-      // Scroll suave para galería
-      document.querySelectorAll('.gallery-container').forEach(container => {
-        container.addEventListener('wheel', function(e) {
-          if (e.deltaY > 0) {
-            this.scrollTop += 50;
-          } else {
-            this.scrollTop -= 50;
-          }
-          e.preventDefault();
-        });
-      });
-
-      // Scroll suave para flecha indicadora
-      document.querySelector('.scroll-indicator').addEventListener('click', () => {
+    // Animación de la flecha indicadora
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', () => {
         window.scrollTo({
           top: document.querySelector('#sobre-nosotros').offsetTop,
           behavior: 'smooth'
         });
       });
+    }
+  }
 
-      // Lazy load mejorado
-      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-        img.addEventListener('load', () => {
-          img.classList.add('loaded');
-        });
-        if (img.complete) img.classList.add('loaded');
+  // ==================== PARTÍCULAS INTERACTIVAS ====================
+  function initParticles() {
+    if (document.getElementById('particles-js')) {
+      particlesJS('particles-js', {
+        particles: {
+          number: { 
+            value: 80, 
+            density: { 
+              enable: true, 
+              value_area: 800 
+            } 
+          },
+          color: { 
+            value: "#2ad8d8" 
+          },
+          shape: { 
+            type: "circle" 
+          },
+          opacity: { 
+            value: 0.5, 
+            random: true 
+          },
+          size: { 
+            value: 3, 
+            random: true 
+          },
+          line_linked: { 
+            enable: true, 
+            distance: 150, 
+            color: "#2ad8d8", 
+            opacity: 0.4, 
+            width: 1 
+          },
+          move: { 
+            enable: true, 
+            speed: 3, 
+            direction: "none", 
+            random: true, 
+            straight: false, 
+            out_mode: "out" 
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { 
+              enable: true, 
+              mode: "repulse" 
+            },
+            onclick: { 
+              enable: true, 
+              mode: "push" 
+            },
+            resize: true
+          },
+          modes: {
+            repulse: { 
+              distance: 100, 
+              duration: 0.4 
+            },
+            push: { 
+              particles_nb: 4 
+            }
+          }
+        },
+        retina_detect: true
+      });
+    }
+  }
+
+  // ==================== CARRUSEL SOBRE NOSOTROS ====================
+  function initCarousel() {
+    const slides = document.querySelectorAll('.about-slide');
+    if (slides.length === 0) return;
+
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
+    const carousel = document.querySelector('.about-carousel');
+    let currentIndex = 0;
+    let autoSlideInterval;
+    let isAnimating = false;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    // Mostrar slide con animación
+    function showSlide(index) {
+      if (isAnimating) return;
+      isAnimating = true;
+      
+      // Ocultar slide actual con animación
+      slides[currentIndex].classList.remove('active');
+      anime({
+        targets: slides[currentIndex],
+        opacity: 0,
+        duration: 400,
+        easing: 'easeInOutQuad'
+      });
+      
+      // Mostrar nuevo slide con animación
+      currentIndex = (index + slides.length) % slides.length;
+      slides[currentIndex].classList.add('active');
+      
+      anime({
+        targets: slides[currentIndex],
+        opacity: [0, 1],
+        duration: 800,
+        easing: 'easeInOutQuad',
+        complete: () => {
+          isAnimating = false;
+        }
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+      resetAutoSlide();
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+      resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 8000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (diff > 50) { // Swipe izquierda
+        nextSlide();
+      } else if (diff < -50) { // Swipe derecha
+        prevSlide();
+      }
+    }
+
+    // Event listeners
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+    // Touch events para móviles
+    if (carousel) {
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+
+      carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, {passive: true});
+
+      // Pausar auto slide al interactuar
+      carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+      carousel.addEventListener('mouseleave', startAutoSlide);
+      carousel.addEventListener('touchstart', () => clearInterval(autoSlideInterval), {passive: true});
+      carousel.addEventListener('touchend', () => {
+        setTimeout(startAutoSlide, 5000);
+      }, {passive: true});
+    }
+
+    // Inicialización
+    showSlide(0);
+    startAutoSlide();
+  }
+
+  // ==================== GALERÍA INTERACTIVA ====================
+  function initGallery() {
+    const galleryContainers = document.querySelectorAll('.gallery-container');
+    if (galleryContainers.length === 0) return;
+
+    galleryContainers.forEach(container => {
+      container.addEventListener('wheel', function(e) {
+        if (e.deltaY > 0) {
+          this.scrollTop += 50;
+        } else {
+          this.scrollTop -= 50;
+        }
+        e.preventDefault();
       });
 
-      // ==================== ANIMACIÓN SCROLL SECCIONES ====================
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+      // Efecto hover para items de galería
+      const galleryItems = container.querySelectorAll('.gallery-item');
+      galleryItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          item.style.transform = 'scale(1.02)';
+          item.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+          item.style.border = '2px solid #00d2ff';
         });
-      }, { threshold: 0.2 });
-      
-      document.querySelectorAll('.fade-in').forEach(section => {
-        observer.observe(section);
-        section.classList.add('transition-ready');
+
+        item.addEventListener('mouseleave', () => {
+          item.style.transform = '';
+          item.style.boxShadow = '';
+          item.style.border = '';
+        });
       });
     });
-  </script>
+  }
+
+  // ==================== EFECTOS DE SCROLL ====================
+  function initScrollEffects() {
+    // Flecha indicadora de scroll
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', () => {
+        window.scrollTo({
+          top: document.querySelector('#sobre-nosotros').offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Scroll suave para enlaces del navbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+
+  // ==================== LAZY LOADING ====================
+  function initLazyLoading() {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    if (lazyImages.length === 0) return;
+
+    lazyImages.forEach(img => {
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+      });
+      if (img.complete) img.classList.add('loaded');
+    });
+
+    // Intersection Observer para lazy loading más eficiente
+    const lazyObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+          if (img.dataset.srcset) {
+            img.srcset = img.dataset.srcset;
+          }
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-src], [data-srcset]').forEach(el => {
+      lazyObserver.observe(el);
+    });
+  }
+
+  // ==================== INTERSECTION OBSERVER ====================
+  function initIntersectionObserver() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    if (fadeElements.length === 0) return;
+
+    fadeElements.forEach(el => {
+      el.classList.add('transition-ready');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Animación adicional para elementos visibles
+          if (entry.target.classList.contains('benefit-card')) {
+            anime({
+              targets: entry.target,
+              translateY: [20, 0],
+              opacity: [0, 1],
+              duration: 800,
+              easing: 'easeOutExpo'
+            });
+          }
+        }
+      });
+    }, { threshold: 0.2 });
+
+    fadeElements.forEach(section => {
+      observer.observe(section);
+    });
+  }
+
+  // ==================== EFECTOS ESPECIALES PARA TARJETAS ====================
+  function initCardEffects() {
+    const teamCards = document.querySelectorAll('.team-card');
+    if (teamCards.length === 0) return;
+
+    teamCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        anime({
+          targets: card,
+          translateY: -10,
+          rotateX: 5,
+          rotateY: 5,
+          scale: 1.02,
+          boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+          duration: 500,
+          easing: 'easeOutQuad'
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        anime({
+          targets: card,
+          translateY: 0,
+          rotateX: 0,
+          rotateY: 0,
+          scale: 1,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+          duration: 500,
+          easing: 'easeOutQuad'
+        });
+      });
+    });
+  }
+
+  // Inicializar efectos de tarjetas después de un pequeño retraso
+  setTimeout(initCardEffects, 500);
+</script>
 </body>
 </html>

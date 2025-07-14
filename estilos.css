@@ -955,6 +955,8 @@ body {
 /* ==================== MEDIA QUERIES PARA BOTÓN DESCARGAR ==================== */
 @media (max-width: 991.98px) {
   .btn-download {
+    margin-top: 2vh;
+    margin-right: -1rem;
     padding: 7px 15px;
     font-size: 0.95rem;
   }
@@ -963,7 +965,6 @@ body {
     height: 22px;
   }
 }
-
 @media (max-width: 767.98px) {
   .btn-download {
     padding: 5px 12px; /* Más compacto verticalmente */
@@ -979,7 +980,7 @@ body {
 
 @media (max-width: 575.98px) {
   .btn-download {
-    padding: 4px 10px; /* Más compacto en móviles pequeños */
+    padding: 6px 10px; /* Más compacto en móviles pequeños */
     font-size: 0.85rem;
   }
   

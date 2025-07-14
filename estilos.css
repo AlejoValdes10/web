@@ -131,10 +131,7 @@ body {
   width: 100%;
 }
 
-/* Botón de descarga */
-.btn-download:hover{
-  background-color: #00d0fff3;
-}
+/* ==================== BOTÓN DESCARGAR - ESTILOS BASE ==================== */
 .btn-download {
   background-color: #00d2ff;
   color: #000 !important;
@@ -145,12 +142,16 @@ body {
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  margin: 10px auto; /* Centrado en móviles */
+  margin: 10px auto;
 }
 
 .download-gif {
   height: 25px;
   margin-left: 8px;
+}
+
+.btn-download:hover {
+  background-color: #00d0fff3;
 }
 
 /* ==================== HERO SECTION ==================== */
@@ -450,6 +451,7 @@ body {
 #beneficios .row {
   align-items: stretch;
 }
+
 .benefit-card {
   height: 100%;
   border-radius: 25px;
@@ -513,6 +515,7 @@ body {
   flex-grow: 1;
 }
 
+/* Colores de las tarjetas */
 .card-blue {
   background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
 }
@@ -526,7 +529,8 @@ body {
 }
 
 .card-pink {
-  background: linear-gradient(135deg, #ff5f5f 0%, #fd9696 100%);
+  background: linear-gradient(135deg, #FFE55C 0%, #D4AF37 70%, #B8860B 100%);
+  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.4);
 }
 
 /* ==================== GALERÍA ==================== */
@@ -765,8 +769,7 @@ body {
 .footer {
   position: relative;
   padding: 80px 0 20px;
-  background: rgba(0, 0, 0, 0.8);
-
+  background: #071120;
   color: white;
   overflow: hidden;
 }
@@ -831,7 +834,7 @@ body {
 }
 
 .footer-links a {
-  color: #0246ad;
+  color: #2ad8d8;
   transition: color 0.3s ease;
 }
 
@@ -849,7 +852,7 @@ body {
 .app-btn {
   display: flex;
   align-items: center;
-  background: #0a192f;
+  background: rgba(255,255,255,0.1);
   border-radius: 10px;
   padding: 10px 15px;
   color: white;
@@ -928,8 +931,6 @@ body {
 }
 
 /* ==================== RESPONSIVE ==================== */
-/* ==================== MEDIA QUERIES PARA NAVBAR ==================== */
-
 /* ==================== NAVBAR RESPONSIVE ==================== */
 @media (max-width: 991.98px) {
   /* Ajustes para tablets y móviles */
@@ -951,19 +952,42 @@ body {
     padding: 10px;
     font-size: 1.2rem;
   }
-
-  /* Botón "Descargar" centrado en móviles */
-  .position-absolute.end-0 {
-    position: static !important;
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
+/* ==================== MEDIA QUERIES PARA BOTÓN DESCARGAR ==================== */
+@media (max-width: 991.98px) {
   .btn-download {
-    margin: 0 auto;
+    padding: 7px 15px;
+    font-size: 0.95rem;
+  }
+  
+  .download-gif {
+    height: 22px;
   }
 }
+
+@media (max-width: 767.98px) {
+  .btn-download {
+    padding: 5px 12px; /* Más compacto verticalmente */
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  
+  .download-gif {
+    height: 20px;
+    margin-left: 6px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .btn-download {
+    padding: 4px 10px; /* Más compacto en móviles pequeños */
+    font-size: 0.85rem;
+  }
+  
+  .download-gif {
+    height: 18px;
+  }
+}}
+
 
 @media (max-width: 767.98px) {
   /* Ajustes específicos para móviles pequeños */
@@ -993,6 +1017,7 @@ body {
   }
 }
 
+
   /* Hero */
   .titulo-central {
     font-size: 2.5rem;
@@ -1002,87 +1027,163 @@ body {
     height: 60vh !important;
   }
 
-/* Touch targets aumentados */
-@media (max-width: 576px) {
-  .btn, .nav-link, .gallery-item {
-    min-height: 48px;
+
+ 
+
+
+/* ==================== MEDIA QUERIES PARA BENEFICIOS ==================== */
+@media (max-width: 991.98px) {
+  .benefit-card {
+    min-height: 350px;
+    padding: 25px 20px;
+  }
+  
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  
+  .benefit-card h4 {
+    font-size: 1.3rem;
+    min-height: 50px;
   }
 }
 
-/* Galería ajustes finos */
-@media (max-width: 992px) {
+@media (max-width: 767.98px) {
+  #beneficios .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 95%;
+  }
+  
+  #beneficios .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  
+  #beneficios .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+  
+  .benefit-card {
+    min-height: 300px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    transform-origin: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .benefit-card:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    z-index: 1;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .benefit-card h4 {
+    font-size: 1.1rem;
+    min-height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .benefit-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #beneficios .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .benefit-card {
+    min-height: 280px;
+    padding: 15px 12px;
+  }
+  
+  .benefit-card:hover {
+    transform: scale(1.02) translateY(-3px);
+  }
+}
+
+
+/* Galería ajustes responsive */
+@media (min-width: 992px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-@media (max-width: 768px) {
-  .gallery-container {
-    height: 80vh;
+  
+  /* Primera fila con 2 elementos */
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(2) {
+    grid-column: span 1;
+  }
+  
+  /* Filas siguientes con 3 elementos */
+  .gallery-item:nth-child(n+3) {
+    grid-column: span 1;
+  }
+  
+  /* Asegurar que el último elemento (descarga) ocupe todo el ancho si es necesario */
+  .download-item {
+    grid-column: 1 / -1;
   }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Primera fila con 2 elementos */
+  .gallery-item:nth-child(1) {
+    grid-column: 1 / span 1;
+  }
+  
+  .gallery-item:nth-child(2) {
+    grid-column: 2 / span 1;
+  }
+  
+  /* Filas siguientes con 3 elementos */
+  .gallery-item:nth-child(n+3) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 767.98px) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+  
   .gallery-item {
-    height: 220px !important;
+    height: 250px;
   }
-  .gallery-container {
-    margin: 0 15px;
-    width: calc(100% - 30px);
+  
+  .download-item {
+    height: auto;
+    min-height: 250px;
   }
 }
+
 
 /* Optimización de imágenes */
 img[loading="lazy"] {
   transition: opacity 0.3s;
   opacity: 0;
 }
+
 img[loading="lazy"].loaded {
   opacity: 1;
-}
-
-/* Ajustes generales para móviles */
-@media (max-width: 767.98px) {
-  .navbar-toggler {
-    margin-right: 0;
-  }
-  .logo-gif {
-    margin-bottom: 40px;
-  }
-  .titulo-central {
-    font-size: 3rem;
-    margin-top: -50px;
-  }
-  .section {
-    padding: 70px 0;
-  }
-  .section-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .navbar {
-    padding: 10px 0;
-  }
-  .navbar-toggler-icon {
-    width: 1.2em;
-    height: 1.2em;
-  }
-  .history-title {
-    font-size: 2.5rem;
-  }
-  .team-title {
-    font-size: 2rem;
-  }
-  .section-title {
-    font-size: 1.8rem;
-  }
-  .btn-store {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
 }

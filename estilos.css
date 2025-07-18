@@ -206,7 +206,11 @@ body {
   margin-bottom: 0;
 }
 
+<<<<<<< HEAD
 /* Flecha indicadora de scroll */
+=======
+/* Flecha indicadora de scroll (nuevo) */
+>>>>>>> b3d2953d14fb8d38ee0f4f6fdce9550e1ca83762
 .scroll-indicator {
   position: absolute;
   bottom: 30px;
@@ -1075,6 +1079,7 @@ body {
   .nav-center-items {
     flex-direction: column;
     gap: 10px;
+<<<<<<< HEAD
   }
 
   .navbar-nav .nav-link {
@@ -1194,6 +1199,90 @@ body {
   
   .history-header i {
     font-size: 1.8rem;
+=======
+  }
+
+  .navbar-nav .nav-link {
+    text-align: center;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+/* ==================== MEDIA QUERIES PARA BOTÓN DESCARGAR ==================== */
+@media (max-width: 991.98px) {
+  .btn-download {
+    margin-top: 2vh;
+    margin-right: -1rem;
+    padding: 7px 15px;
+    font-size: 0.95rem;
+  }
+  
+  .download-gif {
+    height: 22px;
+  }
+}
+@media (max-width: 767.98px) {
+  .btn-download {
+    padding: 5px 12px; /* Más compacto verticalmente */
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  
+  .download-gif {
+    height: 20px;
+    margin-left: 6px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .btn-download {
+    padding: 6px 10px; /* Más compacto en móviles pequeños */
+    font-size: 0.85rem;
+  }
+  
+  .download-gif {
+    height: 18px;
+  }
+}}
+
+
+@media (max-width: 767.98px) {
+  /* Ajustes específicos para móviles pequeños */
+  .navbar-toggler {
+    margin-right: 0;
+  }
+
+  .logo-gif {
+    margin-bottom: 40px; /* Reduce espacio debajo del logo en móviles */
+  }
+
+  .titulo-central {
+    font-size: 3rem; /* Tamaño más pequeño para móviles */
+    margin-top: -50px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Ajustes ultra pequeños */
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .navbar-toggler-icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+}
+
+
+  /* Hero */
+  .titulo-central {
+    font-size: 2.5rem;
+    margin-top: -40px;
+  }
+  .gallery-container {
+    height: 60vh !important;
+>>>>>>> b3d2953d14fb8d38ee0f4f6fdce9550e1ca83762
   }
 }
 
@@ -1207,6 +1296,7 @@ body {
   }
 }
 
+<<<<<<< HEAD
 @media (min-width: 992px) {
   .mobile-version {
     display: none;
@@ -1218,6 +1308,12 @@ body {
 }
 
 /* ==================== BENEFICIOS RESPONSIVE ==================== */
+=======
+ 
+
+
+/* ==================== MEDIA QUERIES PARA BENEFICIOS ==================== */
+>>>>>>> b3d2953d14fb8d38ee0f4f6fdce9550e1ca83762
 @media (max-width: 991.98px) {
   .benefit-card {
     min-height: 350px;
@@ -1292,6 +1388,7 @@ body {
   #beneficios .col-md-3 {
     flex: 0 0 100%;
     max-width: 100%;
+<<<<<<< HEAD
   }
   
   .benefit-card {
@@ -1388,5 +1485,86 @@ body {
   
   .desktop-version {
     display: block;
+=======
+>>>>>>> b3d2953d14fb8d38ee0f4f6fdce9550e1ca83762
   }
+  
+  .benefit-card {
+    min-height: 280px;
+    padding: 15px 12px;
+  }
+  
+  .benefit-card:hover {
+    transform: scale(1.02) translateY(-3px);
+  }
+}
+
+
+/* Galería ajustes responsive */
+@media (min-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Primera fila con 2 elementos */
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(2) {
+    grid-column: span 1;
+  }
+  
+  /* Filas siguientes con 3 elementos */
+  .gallery-item:nth-child(n+3) {
+    grid-column: span 1;
+  }
+  
+  /* Asegurar que el último elemento (descarga) ocupe todo el ancho si es necesario */
+  .download-item {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Primera fila con 2 elementos */
+  .gallery-item:nth-child(1) {
+    grid-column: 1 / span 1;
+  }
+  
+  .gallery-item:nth-child(2) {
+    grid-column: 2 / span 1;
+  }
+  
+  /* Filas siguientes con 3 elementos */
+  .gallery-item:nth-child(n+3) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-item {
+    height: 250px;
+  }
+  
+  .download-item {
+    height: auto;
+    min-height: 250px;
+  }
+}
+
+
+/* Optimización de imágenes */
+img[loading="lazy"] {
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
 }

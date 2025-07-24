@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Metadatos esenciales -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Encuentra los mejores eventos nocturnos en tu ciudad con Fiesta Finder">
-  <meta name="keywords" content="fiestas, eventos, Bogotá, noche, música, app">
+  <meta name="description" content="Encuentra los mejores eventos nocturnos en Bogotá con Fiesta Finder - App de fiestas y eventos con reservas instantáneas">
+  <meta name="keywords" content="fiestas, eventos, Bogotá, noche, música, app, discotecas, planes nocturnos">
   
-  <title>Fiesta Finder | Tu guía de eventos nocturnos</title>
+  <title>Fiesta Finder | Tu guía de eventos nocturnos en Bogotá</title>
   
-  <!-- Preconexiones para mejorar performance -->
+  <!-- Preconexiones optimizadas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"></noscript>
   
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Iconos con preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   
-  <!-- Iconos (versión más reciente) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Bootstrap CSS optimizado -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  
-  <!-- Favicon -->
+  <!-- Favicon moderno -->
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="estilos.css">
+  <!-- Estilos CSS con preload -->
+  <link rel="preload" href="estilos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="estilos.css"></noscript>
 </head>
 
 <body>
@@ -63,38 +66,36 @@
     </div>
   </nav>
 
-  <!-- Sección Hero con video de fondo -->
+  <!-- Sección Hero con video -->
   <header class="hero" id="inicio">
     <div class="hero-overlay"></div>
-    <video autoplay loop muted playsinline class="video-fondo">
+    <video autoplay loop muted playsinline class="video-fondo" aria-hidden="true" poster="img/hero-fallback.jpg">
       <source src="img/luna.mp4" type="video/mp4">
-      <!-- Fallback para navegadores que no soportan video -->
-      <img src="img/hero-fallback.jpg" alt="Fiesta Finder background">
+      <source src="img/luna.webm" type="video/webm">
     </video>
     
     <div class="contenido-hero text-center">
-      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif" loading="lazy" width="600" height="300">
+      <img src="img/logo.gif" alt="Logo animado de Fiesta Finder" class="logo-gif" loading="eager" width="600" height="300">
       <h1 class="titulo-central">Fiesta Finder</h1>
       <p class="hero-subtitle">Encuentra los eventos más vibrantes de Bogotá</p>
     </div>
     
-    <!-- Flecha indicadora de scroll -->
-    <div class="scroll-indicator">
-      <i class="fas fa-chevron-down"></i>
+    <div class="scroll-indicator" aria-hidden="true">
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
     </div>
   </header>
 
   <main>
     <!-- Sección Sobre Nosotros -->
-    <section id="sobre-nosotros" class="about-section">
+    <section id="sobre-nosotros" class="about-section" aria-labelledby="sobre-nosotros-heading">
       <!-- Versión Desktop -->
       <div class="desktop-version d-none d-lg-block">
         <div class="about-carousel">
           <!-- Slide 1 - Historia -->
-          <div class="about-slide active interactive-bg">
-            <div class="particles-container" id="particles-js"></div>
+          <div class="about-slide active interactive-bg" aria-live="polite">
+            <div class="particles-container" id="particles-js" aria-hidden="true"></div>
             <div class="history-content">
-              <h1 class="history-title">Nuestra Historia</h1>
+              <h1 id="sobre-nosotros-heading" class="history-title">Nuestra Historia</h1>
               <div class="highlight-box">
                 <p>Fiesta Finder nació para terminar con las fiestas aburridas. Con datos en tiempo real para mostrarte <strong>los eventos más vibrantes</strong> cerca de ti.</p>
                 <p>Nuestro plus: <span class="highlight">Reservas instantáneas, recomendaciones personalizadas y descuentos exclusivos</span> que no encontrarás en otras apps.</p>
@@ -103,19 +104,19 @@
           </div>
 
           <!-- Slide 2 - Equipo -->
-          <div class="about-slide team-slide">
+          <div class="about-slide team-slide" aria-live="polite">
             <div class="team-container">
               <h1 class="team-title">Nuestro Equipo</h1>
               <div class="team-cards">
                 <!-- Tarjeta Jerson -->
-                <div class="team-card">
+                <div class="team-card" tabindex="0" aria-label="Jerson Espitia - Co-Fundador & Desarrollador">
                   <div class="card-front">
                     <h3>Jerson Espitia</h3>
                     <div class="member-photo">
-                      <img src="img/jerson.png" alt="Jerson Espitia" loading="lazy" decoding="async">
+                      <img src="img/jerson.png" alt="Foto de Jerson Espitia" loading="lazy" width="200" height="260">
                     </div>
                     <div class="card-icon">
-                      <i class="fas fa-code"></i>
+                      <i class="fas fa-code" aria-hidden="true"></i>
                     </div>
                   </div>
                   <div class="card-back">
@@ -125,14 +126,14 @@
                 </div>
                 
                 <!-- Tarjeta Cristian -->
-                <div class="team-card">
+                <div class="team-card" tabindex="0" aria-label="Cristian Valdes - CEO & Arquitecto Software">
                   <div class="card-front">
                     <h3>Cristian Valdes</h3>
                     <div class="member-photo">
-                      <img src="img/alejo.png" alt="Cristian Valdés" loading="lazy" decoding="async">
+                      <img src="img/alejo.png" alt="Foto de Cristian Valdés" loading="lazy" width="200" height="260">
                     </div>
                     <div class="card-icon">
-                      <i class="fas fa-lightbulb"></i>
+                      <i class="fas fa-lightbulb" aria-hidden="true"></i>
                     </div>
                   </div>
                   <div class="card-back">
@@ -145,38 +146,34 @@
           </div>
 
           <!-- Flechas de navegación -->
-          <button class="carousel-arrow prev-arrow">◄</button>
-          <button class="carousel-arrow next-arrow">►</button>
+          <button class="carousel-arrow prev-arrow" aria-label="Slide anterior">⇦</button>
+          <button class="carousel-arrow next-arrow" aria-label="Slide siguiente">⇨</button>
         </div>
       </div>
 
       <!-- Versión Móvil -->
       <div class="mobile-version d-lg-none">
         <div class="mobile-history-card">
-          <!-- Sección Historia -->
           <div class="history-header">
-            <i class="fas fa-history"></i>
-            <h2>Nuestra Historia</h2>
+            <i class="fas fa-history" aria-hidden="true"></i>
+            <h2 id="sobre-nosotros-heading-mobile">Nuestra Historia</h2>
           </div>
           <div class="history-body">
             <p>Fiesta Finder nació para terminar con las fiestas aburridas. Con datos en tiempo real para mostrarte <span class="highlight-text">los eventos más vibrantes</span> cerca de ti.</p>
             <p>Nuestro plus: <span class="highlight-text">Reservas instantáneas, recomendaciones personalizadas y descuentos exclusivos</span> que no encontrarás en otras apps.</p>
           </div>
 
-          <!-- Sección Equipo -->
-          <div class="team-section">
-            <h3>Nuestro Equipo</h3>
+          <div class="team-section" aria-labelledby="equipo-heading">
+            <h3 id="equipo-heading">Nuestro Equipo</h3>
             <div class="simple-team-grid">
-              <!-- Miembro 1 - Jerson -->
               <div class="simple-team-member">
-                <img src="img/jerson.png" alt="Jerson Espitia" class="simple-member-img">
+                <img src="img/jerson.png" alt="Jerson Espitia - Co-Fundador" class="simple-member-img" loading="lazy" width="100" height="100">
                 <h4 class="simple-member-name">Jerson Espitia</h4>
                 <p class="simple-member-role">Co-Fundador & Desarrollador</p>
               </div>
               
-              <!-- Miembro 2 - Cristian -->
               <div class="simple-team-member">
-                <img src="img/alejo.png" alt="Cristian Valdés" class="simple-member-img">
+                <img src="img/alejo.png" alt="Cristian Valdés - CEO" class="simple-member-img" loading="lazy" width="100" height="100">
                 <h4 class="simple-member-name">Cristian Valdés</h4>
                 <p class="simple-member-role">CEO & Arquitecto Software</p>
               </div>
@@ -186,144 +183,137 @@
       </div>
     </section>
 
-   <!-- Línea divisoria -->
-    <hr class="section-divider">
+    <hr class="section-divider" aria-hidden="true">
 
     <!-- Sección Beneficios -->
-    <section id="beneficios" class="section bg-dark-blue fade-in">
+    <section id="beneficios" class="section bg-dark-blue fade-in" aria-labelledby="beneficios-heading">
       <div class="container text-center">
-        <h2 class="section-title">¿Por Qué Usar Fiesta Finder?</h2>
-        <div class="row mt-5">
-          <div class="col-md-3 mb-4">
-            <div class="benefit-card card-blue">
-              <div class="benefit-icon">
+        <h2 id="beneficios-heading" class="section-title">¿Por Qué Usar Fiesta Finder?</h2>
+        <div class="row mt-5 g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="benefit-card card-blue" tabindex="0">
+              <div class="benefit-icon" aria-hidden="true">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
-              <h4>Eventos Cercanos</h4>
-              <p>Filtra por ubicación, fecha o categoría y encuentra lo 
-                mejor cerca de ti. Nuestro algoritmo geolocalizado te muestra opciones en tiempo real basadas
-                 en tu posición actual.</p>
+              <h3>Eventos Cercanos</h3>
+              <p>Filtra por ubicación, fecha o categoría y encuentra lo mejor cerca de ti. Nuestro algoritmo geolocalizado te muestra opciones en tiempo real basadas en tu posición actual.</p>
             </div>
           </div>
-          <div class="col-md-3 mb-4">
-            <div class="benefit-card card-purple">
-              <div class="benefit-icon">
+          <div class="col-md-6 col-lg-3">
+            <div class="benefit-card card-purple" tabindex="0">
+              <div class="benefit-icon" aria-hidden="true">
                 <i class="fas fa-magic"></i>
               </div>
-              <h4>Experiencia Personalizada</h4>
-              <p>Recibe recomendaciones basadas en tus gustos, asistencias previas y ratings. Aprende de tus preferencias 
-                para ofrecerte cada vez mejores opciones de entretenimiento.</p>
+              <h3>Experiencia Personalizada</h3>
+              <p>Recibe recomendaciones basadas en tus gustos, asistencias previas y ratings. Aprende de tus preferencias para ofrecerte cada vez mejores opciones de entretenimiento.</p>
             </div>
           </div>
-          <div class="col-md-3 mb-4">
-            <div class="benefit-card card-teal">
-              <div class="benefit-icon">
+          <div class="col-md-6 col-lg-3">
+            <div class="benefit-card card-teal" tabindex="0">
+              <div class="benefit-icon" aria-hidden="true">
                 <i class="fas fa-headset"></i>
               </div>
-              <h4>Soporte 24/7</h4>
-              <p>Asistencia inmediata 24/7 por chat o correo. Resolvemos dudas, problemas de reservas o cualquier 
-                inconveniente que tengas durante tu experiencia de fiesta.</p>
+              <h3>Soporte 24/7</h3>
+              <p>Asistencia inmediata 24/7 por chat o correo. Resolvemos dudas, problemas de reservas o cualquier inconveniente que tengas durante tu experiencia de fiesta.</p>
             </div>
           </div>
-          <div class="col-md-3 mb-4">
-            <div class="benefit-card card-pink">
-              <div class="benefit-icon">
+          <div class="col-md-6 col-lg-3">
+            <div class="benefit-card card-pink" tabindex="0">
+              <div class="benefit-icon" aria-hidden="true">
                 <i class="fas fa-globe-americas"></i>
               </div>
-              <h4>Diversidad de Eventos</h4>
-              <p>Fiesta Finder te ofrece más que fiestas. Ya que con sus conciertos, gastrobares, festivales, 
-                eventos culturales y más. Es Todo lo que necesitas para disfrutar y descubrir Bogotá.</p>
+              <h3>Diversidad de Eventos</h3>
+              <p>Fiesta Finder te ofrece más que fiestas. Ya que con sus conciertos, gastrobares, festivales, eventos culturales y más. Es Todo lo que necesitas para disfrutar y descubrir Bogotá.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Línea divisoria -->
-    <hr class="section-divider">
+    <hr class="section-divider" aria-hidden="true">
 
     <!-- Sección Galería -->
-    <section id="galeria" class="section fade-in">
+    <section id="galeria" class="section fade-in" aria-labelledby="galeria-heading">
       <div class="container text-center">
-        <h2 class="section-title">Momentos Fiesta Finder</h2>
+        <h2 id="galeria-heading" class="section-title">Momentos Fiesta Finder</h2>
         <p class="section-description">Así se viven nuestras experiencias: luces, energía y mucha diversión.</p>
         
         <div class="gallery-container">
           <div class="gallery-grid">
             <!-- Fila 1 -->
-            <div class="gallery-item">
-              <img src="img/img1.gif" alt="Fiesta Festival EDM" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img1.gif" alt="Fiesta Festival EDM con más de 5,000 asistentes" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>Fiesta Festival EDM</h5>
                 <p>Más de 5,000 asistentes disfrutando de los mejores DJs</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
-            <div class="gallery-item">
-              <img src="img/img5.webp" alt="Club Nocturno Premium" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img5.webp" alt="Club Nocturno Premium con experiencias VIP" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>Club Nocturno Premium</h5>
                 <p>Experiencias VIP con servicio personalizado</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
-            <div class="gallery-item">
-              <img src="img/img3.gif" alt="Terraza Sunset Sessions" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img3.gif" alt="Terraza Sunset Sessions con atardeceres mágicos" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>Terraza Sunset Sessions</h5>
                 <p>Atardeceres mágicos con los mejores cócteles</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
             <!-- Fila 2 -->
-            <div class="gallery-item">
-              <img src="img/img4.gif" alt="Discotecas Exclusivas" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img4.gif" alt="Discotecas Exclusivas para bailar toda la noche" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>Discotecas Exclusivas</h5>
                 <p>Los mejores ambientes para bailar toda la noche</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
-            <div class="gallery-item">
-              <img src="img/img2.gif" alt="Conciertos En Vivo" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img2.gif" alt="Conciertos En Vivo con artistas nacionales e internacionales" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>Conciertos En Vivo</h5>
                 <p>Artistas nacionales e internacionales</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
-            <div class="gallery-item">
-              <img src="img/img6.webp" alt="Bares Temáticos" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img6.webp" alt="Bares Temáticos con ambientes únicos" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>Bares Temáticos</h5>
                 <p>Ambientes únicos para cada gusto</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
             <!-- Fila 3 -->
-            <div class="gallery-item">
-              <img src="img/img7.jpg" alt="After Parties" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img7.jpg" alt="After Parties que continúan hasta el amanecer" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>After Parties</h5>
                 <p>La fiesta continúa hasta el amanecer</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
-            <div class="gallery-item">
-              <img src="img/img9.avif" alt="Eventos Especiales" loading="lazy" decoding="async">
-              <div class="gallery-overlay">
+            <figure class="gallery-item">
+              <img src="img/img9.avif" alt="Eventos Especiales con celebraciones únicas" loading="lazy" width="400" height="300">
+              <figcaption class="gallery-overlay">
                 <h5>Eventos Especiales</h5>
                 <p>Celebraciones únicas e inolvidables</p>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
             
             <!-- Botón para ver más eventos -->
-            <div class="gallery-item download-item">
+            <div class="gallery-item download-item" id="descargar">
               <div class="download-content">
-                <i class="fas fa-plus-circle"></i>
+                <i class="fas fa-plus-circle" aria-hidden="true"></i>
                 <h3>¿Quieres ver más eventos?</h3>
                 <p>Descarga la app para descubrir todos los eventos disponibles</p>
-                <button class="btn btn-download-gallery" data-bs-toggle="modal" data-bs-target="#downloadModal">
+                <button class="btn btn-download-gallery" data-bs-toggle="modal" data-bs-target="#downloadModal" aria-label="Descargar la aplicación">
                   Descargar App
                 </button>
               </div>
@@ -333,96 +323,94 @@
       </div>
     </section>
 
-  <!-- ==================== CONTACTO ==================== -->
-  <section id="contacto" class="section bg-dark-blue fade-in">
-    <div class="container">
-      <div class="contact-container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="contact-info">
-              <h2 class="section-title">Contáctanos</h2>
-              <p class="section-description">¿Tienes un evento y quieres publicarlo? ¿Eres usuario y tienes dudas? ¡Estamos para ayudarte!</p>
-              
-              <div class="contact-details mt-4">
-                <div class="contact-item">
-                  <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div class="contact-text">
-                    <h5>Ubicación</h5>
-                    <p>Bogotá, Colombia</p>
-                  </div>
-                </div>
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section bg-dark-blue fade-in" aria-labelledby="contacto-heading">
+      <div class="container">
+        <div class="contact-container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="contact-info">
+                <h2 id="contacto-heading" class="section-title">Contáctanos</h2>
+                <p class="section-description">¿Tienes un evento y quieres publicarlo? ¿Eres usuario y tienes dudas? ¡Estamos para ayudarte!</p>
                 
-                <div class="contact-item">
-                  <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
+                <div class="contact-details mt-4">
+                  <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                      <h3>Ubicación</h3>
+                      <p>Bogotá, Colombia</p>
+                    </div>
                   </div>
-                  <div class="contact-text">
-                    <h5>Email</h5>
-                    <p>info@fiestafinder.com</p>
+                  
+                  <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                      <h3>Email</h3>
+                      <p><a href="mailto:info@fiestafinder.com" class="text-reset">info@fiestafinder.com</a></p>
+                    </div>
                   </div>
-                </div>
-                
-                <div class="contact-item">
-                  <div class="contact-icon">
-                    <i class="fas fa-phone-alt"></i>
+                  
+                  <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">
+                      <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                      <h3>Teléfono</h3>
+                      <p><a href="tel:+573215007548">+57 321 500 7548</a></p>
+                      <p><a href="tel:+573227131453">+57 322 713 1453</a></p>
+                    </div>
                   </div>
-                  <div class="contact-text">
-                    <h5>Teléfono</h5>
-                    <p>+57 321 500 7548</p>
-                    <p>+57 322 713 1453</p>
+                  
+                  <div class="social-icons">
+                    <a href="https://facebook.com/fiestafinder" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Fiesta Finder"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/fiestafinder" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Fiesta Finder"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/fiestafinder" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter de Fiesta Finder"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/fiestafinder" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Fiesta Finder"><i class="fab fa-youtube"></i></a>
                   </div>
-                </div>
-                
-                <div class="social-icons">
-                  <a href="https://facebook.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://instagram.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                  <a href="https://twitter.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-                  <a href="https://youtube.com/fiestafinder" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div class="col-lg-6">
-            <div class="contact-form">
-              <form>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control custom-input" id="nameInput" placeholder="Nombre" required>
-                  <label for="nameInput">Nombre</label>
-                </div>
-                
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control custom-input" id="emailInput" placeholder="Correo" required>
-                  <label for="emailInput">Correo</label>
-                </div>
-                
-                <div class="form-floating mb-3">
-                  <textarea class="form-control custom-input" id="messageInput" placeholder="Tu mensaje" style="height: 150px" required></textarea>
-                  <label for="messageInput">Tu mensaje</label>
-                </div>
-                
-                <button type="submit" class="btn btn-submit">
-                  <span>Enviar Mensaje</span>
-                  <i class="fas fa-paper-plane"></i>
-                </button>
-              </form>
+            
+            <div class="col-lg-6">
+              <div class="contact-form">
+                <form id="contactForm" aria-labelledby="contacto-heading">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control custom-input" id="nameInput" placeholder="Nombre" required aria-required="true">
+                    <label for="nameInput">Nombre</label>
+                  </div>
+                  
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control custom-input" id="emailInput" placeholder="Correo" required aria-required="true">
+                    <label for="emailInput">Correo</label>
+                  </div>
+                  
+                  <div class="form-floating mb-3">
+                    <textarea class="form-control custom-input" id="messageInput" placeholder="Tu mensaje" style="height: 150px" required aria-required="true"></textarea>
+                    <label for="messageInput">Tu mensaje</label>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-submit">
+                    <span>Enviar Mensaje</span>
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-    <!-- Línea divisoria -->
-    <hr class="section-divider">
+    <hr class="section-divider" aria-hidden="true">
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="waves">
+  <footer class="footer" aria-label="Pie de página">
+    <div class="waves" aria-hidden="true">
       <div class="wave" id="wave1"></div>
       <div class="wave" id="wave2"></div>
       <div class="wave" id="wave3"></div>
@@ -432,30 +420,30 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 footer-col">
-          <h4>Fiesta Finder</h4>
+          <h2 class="footer-heading">Fiesta Finder</h2>
           <p class="footer-about">Tu app definitiva para encontrar las mejores fiestas y eventos en Bogotá. Nunca más te perderás una buena fiesta.</p>
         </div>
         
         <div class="col-md-4 footer-col">
-          <h4>Enlaces Rápidos</h4>
+          <h2 class="footer-heading">Enlaces Rápidos</h2>
           <ul class="footer-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-            <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio" aria-label="Ir a Inicio">Inicio</a></li>
+            <li><a href="#sobre-nosotros" aria-label="Ir a Sobre Nosotros">Sobre Nosotros</a></li>
+            <li><a href="#beneficios" aria-label="Ir a Beneficios">Beneficios</a></li>
+            <li><a href="#galeria" aria-label="Ir a Galería">Galería</a></li>
+            <li><a href="#contacto" aria-label="Ir a Contacto">Contacto</a></li>
           </ul>
         </div>
         
         <div class="col-md-4 footer-col">
-          <h4>Descarga la App</h4>
+          <h2 class="footer-heading">Descarga la App</h2>
           <div class="app-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.fiestafinder" class="app-btn" target="_blank">
-              <i class="fab fa-google-play"></i>
+            <a href="https://play.google.com/store/apps/details?id=com.fiestafinder" class="app-btn" target="_blank" rel="noopener noreferrer" aria-label="Descargar en Google Play">
+              <i class="fab fa-google-play" aria-hidden="true"></i>
               <span>Google Play</span>
             </a>
-            <a href="https://apps.apple.com/app/fiesta-finder/id123456789" class="app-btn" target="_blank">
-              <i class="fab fa-apple"></i>
+            <a href="https://apps.apple.com/app/fiesta-finder/id123456789" class="app-btn" target="_blank" rel="noopener noreferrer" aria-label="Descargar en App Store">
+              <i class="fab fa-apple" aria-hidden="true"></i>
               <span>App Store</span>
             </a>
           </div>
@@ -470,28 +458,28 @@
     </div>
   </footer>
 
-    <!-- ==================== MODAL DESCARGAR ==================== -->
-  <div class="modal fade" id="downloadModal" tabindex="-1" aria-hidden="true">
+  <!-- Modal de descarga -->
+  <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content download-modal-content">
         <div class="modal-body text-center p-5">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <h3 class="mb-4">Descarga Fiesta Finder</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar modal"></button>
+          <h3 id="downloadModalLabel" class="mb-4">Descarga Fiesta Finder</h3>
           <p class="mb-4">Escanea el código QR con tu celular para descargar la app</p>
           
           <div class="qr-container">
-            <img src="img/qrrr.png" alt="QR Code para descargar Fiesta Finder" class="img-fluid qr-code" loading="lazy" decoding="async">
-            <div class="qr-overlay"></div>
+            <img src="img/qrrr.png" alt="Código QR para descargar Fiesta Finder" class="img-fluid qr-code" loading="lazy" width="200" height="200">
+            <div class="qr-overlay" aria-hidden="true"></div>
           </div>
           
           <div class="download-links mt-4">
             <p class="mb-3">O descarga directamente:</p>
-            <div class="d-flex justify-content-center gap-3">
-              <a href="https://play.google.com/store/apps/details?id=com.fiestafinder" class="btn btn-store" target="_blank">
-                <i class="fab fa-google-play"></i> Google Play
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <a href="https://play.google.com/store/apps/details?id=com.fiestafinder" class="btn btn-store" target="_blank" rel="noopener noreferrer" aria-label="Descargar en Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i> Google Play
               </a>
-              <a href="https://apps.apple.com/app/fiesta-finder/id123456789" class="btn btn-store" target="_blank">
-                <i class="fab fa-apple"></i> App Store
+              <a href="https://apps.apple.com/app/fiesta-finder/id123456789" class="btn btn-store" target="_blank" rel="noopener noreferrer" aria-label="Descargar en App Store">
+                <i class="fab fa-apple" aria-hidden="true"></i> App Store
               </a>
             </div>
           </div>
@@ -500,164 +488,151 @@
     </div>
   </div>
 
-  <!-- Scripts al final del body para mejor performance -->
+  <!-- Scripts -->
+
   <!-- Bootstrap Bundle con Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
   
+  <!-- Script principal -->
   <script>
-  // =============================================
-// FIESTA FINDER - SCRIPTS PRINCIPALES
-// =============================================
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Actualizar año en el footer
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-  
-  // Inicializar particles.js solo en desktop
-  if (window.innerWidth > 992 && document.getElementById('particles-js')) {
-    // Cargar particles.js dinámicamente
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-    script.onload = function() {
-      particlesJS('particles-js', {
-        particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: "#2ad8d8" },
-          shape: { type: "circle" },
-          opacity: { value: 0.5, random: true },
-          size: { value: 3, random: true },
-          line_linked: { enable: true, distance: 150, color: "#2ad8d8", opacity: 0.4, width: 1 },
-          move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: true, mode: "repulse" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 },
-            push: { particles_nb: 4 }
-          }
-        },
-        retina_detect: true
-      });
-    };
-    document.body.appendChild(script);
-  }
-
-  // Carrusel Sobre Nosotros (solo desktop)
-  if (window.innerWidth > 992) {
-    const slides = document.querySelectorAll('.about-slide');
-    const prevBtn = document.querySelector('.prev-arrow');
-    const nextBtn = document.querySelector('.next-arrow');
-    let currentIndex = 0;
-    let autoSlideInterval;
-
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
+  document.addEventListener('DOMContentLoaded', function() {
+    // Actualizar año en el footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Cargar particles.js solo en desktop si existe el contenedor
+    const particlesContainer = document.getElementById('particles-js');
+    if (window.innerWidth > 992 && particlesContainer) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+      script.onload = function() {
+        if (window.particlesJS) {
+          particlesJS('particles-js', {
+            particles: {
+              number: { value: 80, density: { enable: true, value_area: 800 } },
+              color: { value: "#2ad8d8" },
+              shape: { type: "circle" },
+              opacity: { value: 0.5, random: true },
+              size: { value: 3, random: true },
+              line_linked: { enable: true, distance: 150, color: "#2ad8d8", opacity: 0.4, width: 1 },
+              move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" },
+                resize: true
+              },
+              modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { particles_nb: 4 }
+              }
+            },
+            retina_detect: true
+          });
+        }
+      };
+      document.body.appendChild(script);
     }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-      resetAutoSlide();
-    }
+    // Carrusel Sobre Nosotros (solo desktop)
+    if (window.innerWidth > 992) {
+      const slides = document.querySelectorAll('.about-slide');
+      if (slides.length > 0) {
+        const prevBtn = document.querySelector('.prev-arrow');
+        const nextBtn = document.querySelector('.next-arrow');
+        let currentIndex = 0;
+        let autoSlideInterval;
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-      resetAutoSlide();
-    }
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+            slide.setAttribute('aria-hidden', i !== index);
+          });
+        }
 
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 8000);
-    }
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+          resetAutoSlide();
+        }
 
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(currentIndex);
+          resetAutoSlide();
+        }
 
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-    showSlide(0);
-    startAutoSlide();
+        function startAutoSlide() {
+          autoSlideInterval = setInterval(nextSlide, 8000);
+        }
 
-    const carousel = document.querySelector('.about-carousel');
-    carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-    carousel.addEventListener('mouseleave', startAutoSlide);
-  }
+        function resetAutoSlide() {
+          clearInterval(autoSlideInterval);
+          startAutoSlide();
+        }
 
-  // Animación tarjetas equipo en móvil
-  const teamMembers = document.querySelectorAll('.simple-team-member');
-  if (teamMembers.length > 0 && window.innerWidth <= 992) {
-    teamMembers.forEach((member, index) => {
-      setTimeout(() => {
-        member.style.opacity = '0';
-        member.style.transform = 'translateY(20px)';
-        member.style.transition = 'all 0.5s ease-out';
-        
-        setTimeout(() => {
-          member.style.opacity = '1';
-          member.style.transform = 'translateY(0)';
-        }, 100);
-      }, index * 200);
-    });
-  }
+        if (prevBtn && nextBtn) {
+          prevBtn.addEventListener('click', prevSlide);
+          nextBtn.addEventListener('click', nextSlide);
+        }
 
-  // Scroll suave para flecha indicadora
-  document.querySelector('.scroll-indicator').addEventListener('click', () => {
-    document.querySelector('#sobre-nosotros').scrollIntoView({ 
-      behavior: 'smooth' 
-    });
-  });
+        showSlide(0);
+        startAutoSlide();
 
-  // Lazy load mejorado
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-    img.addEventListener('load', () => {
-      img.classList.add('loaded');
-    });
-    if (img.complete) img.classList.add('loaded');
-  });
-
-  // Animación al hacer scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        const carousel = document.querySelector('.about-carousel');
+        if (carousel) {
+          carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+          carousel.addEventListener('mouseleave', startAutoSlide);
+        }
       }
+    }
+
+    // Scroll suave para flecha indicadora
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', () => {
+        const target = document.querySelector('#sobre-nosotros');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    // Manejo del formulario de contacto
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Simulación de envío para demostración
+        alert('Mensaje enviado con éxito!');
+        this.reset();
+      });
+    }
+
+    // Observador de intersección para animaciones
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    document.querySelectorAll('.fade-in').forEach(section => {
+      section.classList.add('transition-ready');
+      observer.observe(section);
     });
-  }, { threshold: 0.2 });
-  
-  document.querySelectorAll('.fade-in').forEach(section => {
-    observer.observe(section);
-    section.classList.add('transition-ready');
   });
 
-  // Manejo del formulario de contacto
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Aquí iría la lógica para enviar el formulario
-      alert('Mensaje enviado con éxito!');
-      this.reset();
-    });
-  }
-});
-
-// Manejo del redimensionamiento
-window.addEventListener('resize', function() {
-  if (window.innerWidth > 992 && document.getElementById('particles-js') && !document.querySelector('#particles-js > canvas')) {
-    // Reiniciar particles.js si es necesario
-  }
-});
-</script>
-
-  <!-- Scripts personalizados -->
-  <script src="js/main.js"></script>
+  // Manejo del redimensionamiento
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      // Aquí podrías recargar particles.js si es necesario
+    }, 250);
+  });
+  </script>
 </body>
 </html>

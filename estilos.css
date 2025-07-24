@@ -106,6 +106,7 @@ a{
   text-decoration: none;
 }
 
+
 /* 3. COMPONENTES REUTILIZABLES */
 .btn {
   background-color: #00d2ff;
@@ -145,6 +146,28 @@ a{
 
 
 /* 4. HEADER Y NAVEGACIÓN */
+/* Navbar container */
+.navbar-nav-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+/* Centrar los items del nav */
+.nav-center-items {
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Contenedor del botón descargar */
+.download-container {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .navbar {
   padding: 15px 0;
   transition: var(--transicion-rapida);
@@ -714,6 +737,7 @@ a{
 }
 
 /* 8. SECCIÓN GALERÍA */
+/* ==================== GALERÍA ==================== */
 .gallery-container {
   width: 100%;
   max-width: 1200px;
@@ -725,13 +749,15 @@ a{
   background: rgba(26, 26, 46, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 223, 0, 0.3);
-  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+  box-shadow: 
+    0 0 15px rgba(0, 210, 255, 0.5),
+    inset 0 0 15px rgba(0, 210, 255, 0.3);
   padding: 25px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   grid-auto-rows: minmax(300px, auto);
   padding-bottom: 20px;
@@ -741,8 +767,8 @@ a{
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: var(--sombra-secundaria);
-  transition: var(--transicion-rapida);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
   height: 300px;
 }
 
@@ -751,13 +777,13 @@ a{
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: var(--transicion-lenta);
+  transition: transform 0.5s ease;
 }
 
 .gallery-item:hover {
   transform: scale(1.02);
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  border: 2px solid var(--color-acento);
+  border: 2px solid #00d2ff;
 }
 
 .gallery-item:hover img {
@@ -773,7 +799,7 @@ a{
   padding: 20px;
   color: white;
   transform: translateY(100%);
-  transition: var(--transicion-rapida);
+  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -790,8 +816,9 @@ a{
   opacity: 0.9;
 }
 
+/* Estilo para el elemento de descarga en la galería */
 .download-item {
-  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+  background: linear-gradient(135deg, #2ad8d8 0%, #0a192f 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -823,20 +850,21 @@ a{
 
 .btn-download-gallery {
   background: white;
-  color: var(--color-secundario);
+  color: #0a192f;
   border: none;
   padding: 10px 25px;
   border-radius: 30px;
   font-weight: bold;
-  transition: var(--transicion-rapida);
+  transition: all 0.3s ease;
 }
 
 .btn-download-gallery:hover {
-  background: var(--color-acento);
+  background: #00d2ff;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 210, 255, 0.5);
 }
 
+/* Scrollbar personalizada */
 .gallery-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -847,7 +875,7 @@ a{
 }
 
 .gallery-container::-webkit-scrollbar-thumb {
-  background: var(--color-acento);
+  background: #00d2ff;
   border-radius: 10px;
 }
 
@@ -1109,20 +1137,24 @@ a{
 
 /* 12. RESPONSIVE DESIGN */
 @media (max-width: 991.98px) {
-  .section {
-    padding: 60px 0;
-  }
-  
-  .navbar-collapse {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 10px;
+  .navbar-nav-container {
+    flex-direction: column;
   }
   
   .nav-center-items {
+    position: static;
+    left: auto;
+    transform: none;
     flex-direction: column;
-    gap: 10px;
+    width: 100%;
+  }
+  
+  .download-container {
+    position: static;
+    transform: none;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
   }
   
   .navbar-nav .nav-link {
@@ -1133,15 +1165,17 @@ a{
   }
   
   .btn-download {
-    margin-top: 20px;
-    padding: 8px 15px;
-    font-size: 0.95rem;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 1rem;
   }
+
   
   .download-gif {
     height: 22px;
   }
-  
+
+
   .desktop-version {
     display: none;
   }
@@ -1200,6 +1234,45 @@ a{
     max-width: 100%;
   }
   
+/* ==================== GALERÍA RESPONSIVE ==================== */
+@media (min-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(2) {
+    grid-column: span 1;
+  }
+  
+  .gallery-item:nth-child(n+3) {
+    grid-column: span 1;
+  }
+  
+  .download-item {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .gallery-item:nth-child(1) {
+    grid-column: 1 / span 1;
+  }
+  
+  .gallery-item:nth-child(2) {
+    grid-column: 2 / span 1;
+  }
+  
+  .gallery-item:nth-child(n+3) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 767.98px) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
@@ -1208,9 +1281,11 @@ a{
     height: 250px;
   }
   
-  .gallery-container {
-    height: 60vh;
+  .download-item {
+    height: auto;
+    min-height: 250px;
   }
+}
 }
 
 @media (max-width: 575.98px) {

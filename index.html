@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Metadatos esenciales -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiesta Finder</title>
+  <meta name="description" content="Encuentra los mejores eventos nocturnos en tu ciudad con Fiesta Finder">
+  <meta name="keywords" content="fiestas, eventos, Bogotá, noche, música, app">
+  
+  <title>Fiesta Finder | Tu guía de eventos nocturnos</title>
+  
+  <!-- Preconexiones para mejorar performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Iconos (versión más reciente) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <!-- Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
 
-  <!-- ==================== NAVBAR ==================== -->
+<body>
+  <!-- Navbar principal -->
   <nav class="navbar navbar-expand-lg fixed-top menu-bg">
     <div class="container-fluid">
+      <!-- Logo para móviles -->
+      <a class="navbar-brand d-lg-none" href="#">
+        <img src="img/logo-small.png" alt="Fiesta Finder" height="40">
+      </a>
+      
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,261 +63,272 @@
     </div>
   </nav>
 
-  <!-- ==================== HERO SECTION ==================== -->
+  <!-- Sección Hero con video de fondo -->
   <header class="hero" id="inicio">
     <div class="hero-overlay"></div>
     <video autoplay loop muted playsinline class="video-fondo">
       <source src="img/luna.mp4" type="video/mp4">
+      <!-- Fallback para navegadores que no soportan video -->
+      <img src="img/hero-fallback.jpg" alt="Fiesta Finder background">
     </video>
+    
     <div class="contenido-hero text-center">
-      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif" loading="lazy" decoding="async">
+      <img src="img/logo.gif" alt="Logo Fiesta Finder" class="logo-gif" loading="lazy" width="600" height="300">
       <h1 class="titulo-central">Fiesta Finder</h1>
+      <p class="hero-subtitle">Encuentra los eventos más vibrantes de Bogotá</p>
     </div>
+    
     <!-- Flecha indicadora de scroll -->
     <div class="scroll-indicator">
       <i class="fas fa-chevron-down"></i>
     </div>
   </header>
 
-  <!-- ==================== SOBRE NOSOTROS ==================== -->
-  <section id="sobre-nosotros" class="about-section">
-    <!-- ========== VERSIÓN DESKTOP ========== -->
-    <div class="desktop-version d-none d-lg-block">
-      <div class="about-carousel">
-        <!-- Slide 1 - Historia -->
-        <div class="about-slide active interactive-bg">
-          <div class="particles-container" id="particles-js"></div>
-          <div class="history-content">
-            <h1 class="history-title">Nuestra Historia</h1>
-            <div class="highlight-box">
-              <p>Fiesta Finder nació para terminar con las fiestas aburridas. Con datos en tiempo real para mostrarte <strong>los eventos más vibrantes</strong> cerca de ti.</p>
-              <p>Nuestro plus: <span class="highlight">Reservas instantáneas, recomendaciones 100% personalizadas y descuentos exclusivos</span> que no encontrarás en otras apps.</p>
+  <main>
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="about-section">
+      <!-- Versión Desktop -->
+      <div class="desktop-version d-none d-lg-block">
+        <div class="about-carousel">
+          <!-- Slide 1 - Historia -->
+          <div class="about-slide active interactive-bg">
+            <div class="particles-container" id="particles-js"></div>
+            <div class="history-content">
+              <h1 class="history-title">Nuestra Historia</h1>
+              <div class="highlight-box">
+                <p>Fiesta Finder nació para terminar con las fiestas aburridas. Con datos en tiempo real para mostrarte <strong>los eventos más vibrantes</strong> cerca de ti.</p>
+                <p>Nuestro plus: <span class="highlight">Reservas instantáneas, recomendaciones personalizadas y descuentos exclusivos</span> que no encontrarás en otras apps.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Slide 2 - Equipo -->
-        <div class="about-slide team-slide">
-          <div class="team-container">
-            <h1 class="team-title">Nuestro Equipo</h1>
-            <div class="team-cards">
-              <!-- Tarjeta Jerson -->
-              <div class="team-card">
-                <div class="card-front">
-                  <h3>Jerson Espitia</h3>
-                  <div class="member-photo">
-                    <img src="img/jerson.png" alt="Jerson Espitia" loading="lazy" decoding="async">
+          <!-- Slide 2 - Equipo -->
+          <div class="about-slide team-slide">
+            <div class="team-container">
+              <h1 class="team-title">Nuestro Equipo</h1>
+              <div class="team-cards">
+                <!-- Tarjeta Jerson -->
+                <div class="team-card">
+                  <div class="card-front">
+                    <h3>Jerson Espitia</h3>
+                    <div class="member-photo">
+                      <img src="img/jerson.png" alt="Jerson Espitia" loading="lazy" decoding="async">
+                    </div>
+                    <div class="card-icon">
+                      <i class="fas fa-code"></i>
+                    </div>
                   </div>
-                  <div class="card-icon">
-                    <i class="fas fa-code"></i>
+                  <div class="card-back">
+                    <h4>Co-Fundador & Desarrollador</h4>
+                    <p>Desarrollador principal del algoritmo inteligente que analiza más de 50 parámetros para recomendaciones personalizadas. Especialista en backend y seguridad de datos.</p>
                   </div>
                 </div>
-                <div class="card-back">
-                  <h4>Co-Fundador & Desarrollador</h4>
-                  <p>Desarrollador principal del algoritmo inteligente que analiza más de 50 parámetros para recomendaciones personalizadas. Especialista en backend y seguridad de datos. <strong>Co-creador</strong> de la idea original junto a Cristian.</p>
+                
+                <!-- Tarjeta Cristian -->
+                <div class="team-card">
+                  <div class="card-front">
+                    <h3>Cristian Valdes</h3>
+                    <div class="member-photo">
+                      <img src="img/alejo.png" alt="Cristian Valdés" loading="lazy" decoding="async">
+                    </div>
+                    <div class="card-icon">
+                      <i class="fas fa-lightbulb"></i>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>CEO & Arquitecto Software</h4>
+                    <p>Programador full-stack y estratega de producto. Lideró el diseño de la experiencia de usuario y la visión comercial. Combina habilidades técnicas con visión de negocio.</p>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flechas de navegación -->
+          <button class="carousel-arrow prev-arrow">◄</button>
+          <button class="carousel-arrow next-arrow">►</button>
+        </div>
+      </div>
+
+      <!-- Versión Móvil -->
+      <div class="mobile-version d-lg-none">
+        <div class="mobile-history-card">
+          <!-- Sección Historia -->
+          <div class="history-header">
+            <i class="fas fa-history"></i>
+            <h2>Nuestra Historia</h2>
+          </div>
+          <div class="history-body">
+            <p>Fiesta Finder nació para terminar con las fiestas aburridas. Con datos en tiempo real para mostrarte <span class="highlight-text">los eventos más vibrantes</span> cerca de ti.</p>
+            <p>Nuestro plus: <span class="highlight-text">Reservas instantáneas, recomendaciones personalizadas y descuentos exclusivos</span> que no encontrarás en otras apps.</p>
+          </div>
+
+          <!-- Sección Equipo -->
+          <div class="team-section">
+            <h3>Nuestro Equipo</h3>
+            <div class="simple-team-grid">
+              <!-- Miembro 1 - Jerson -->
+              <div class="simple-team-member">
+                <img src="img/jerson.png" alt="Jerson Espitia" class="simple-member-img">
+                <h4 class="simple-member-name">Jerson Espitia</h4>
+                <p class="simple-member-role">Co-Fundador & Desarrollador</p>
               </div>
               
-              <!-- Tarjeta Cristian -->
-              <div class="team-card">
-                <div class="card-front">
-                  <h3>Cristian Valdés</h3>
-                  <div class="member-photo">
-                    <img src="img/alejo.png" alt="Cristian Valdés" loading="lazy" decoding="async">
-                  </div>
-                  <div class="card-icon">
-                    <i class="fas fa-lightbulb"></i>
-                  </div>
-                </div>
-                <div class="card-back">
-                  <h4>CEO & Arquitecto Software</h4>
-                  <p>Programador full-stack y estratega de producto. Lideró el diseño de la experiencia de usuario y la visión comercial. <strong>Co-creador</strong> de la idea inicial junto a Jerson. Combina habilidades técnicas con visión de negocio.</p>
-                </div>
+              <!-- Miembro 2 - Cristian -->
+              <div class="simple-team-member">
+                <img src="img/alejo.png" alt="Cristian Valdés" class="simple-member-img">
+                <h4 class="simple-member-name">Cristian Valdés</h4>
+                <p class="simple-member-role">CEO & Arquitecto Software</p>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Flechas de navegación -->
-        <button class="carousel-arrow prev-arrow">◄</button>
-        <button class="carousel-arrow next-arrow">►</button>
       </div>
-    </div>
+    </section>
 
-    <!-- ========== VERSIÓN MÓVIL ========== -->
-    <div class="mobile-version d-lg-none">
-      <div class="mobile-history-card">
-        <!-- Sección Historia -->
-        <div class="history-header">
-          <i class="fas fa-history"></i>
-          <h2>Nuestra Historia</h2>
+    <!-- Sección Beneficios -->
+    <section id="beneficios" class="section bg-dark-blue fade-in">
+      <div class="container text-center">
+        <h2 class="section-title">¿Por Qué Usar Fiesta Finder?</h2>
+        <div class="row mt-5">
+          <div class="col-md-3 mb-4">
+            <div class="benefit-card card-blue">
+              <div class="benefit-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h4>Eventos Cercanos</h4>
+              <p>Filtra por ubicación, fecha o categoría y encuentra lo 
+                mejor cerca de ti. Nuestro algoritmo geolocalizado te muestra opciones en tiempo real basadas
+                 en tu posición actual.</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="benefit-card card-purple">
+              <div class="benefit-icon">
+                <i class="fas fa-magic"></i>
+              </div>
+              <h4>Experiencia Personalizada</h4>
+              <p>Recibe recomendaciones basadas en tus gustos, asistencias previas y ratings. Aprende de tus preferencias 
+                para ofrecerte cada vez mejores opciones de entretenimiento.</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="benefit-card card-teal">
+              <div class="benefit-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4>Soporte 24/7</h4>
+              <p>Asistencia inmediata 24/7 por chat o correo. Resolvemos dudas, problemas de reservas o cualquier 
+                inconveniente que tengas durante tu experiencia de fiesta.</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="benefit-card card-pink">
+              <div class="benefit-icon">
+                <i class="fas fa-globe-americas"></i>
+              </div>
+              <h4>Diversidad de Eventos</h4>
+              <p>Fiesta Finder te ofrece más que fiestas. Ya que con sus conciertos, gastrobares, festivales, 
+                eventos culturales y más. Es Todo lo que necesitas para disfrutar y descubrir Bogotá.</p>
+            </div>
+          </div>
         </div>
-        <div class="history-body">
-          <p>Fiesta Finder nació para terminar con las fiestas aburridas. Con datos en tiempo real para mostrarte <span class="highlight-text">los eventos más vibrantes</span> cerca de ti.</p>
-          <p>Nuestro plus: <span class="highlight-text">Reservas instantáneas, recomendaciones 100% personalizadas y descuentos exclusivos</span> que no encontrarás en otras apps.</p>
-        </div>
+      </div>
+    </section>
 
-        <!-- Sección Equipo - Versión simplificada -->
-        <div class="team-section">
-          <h3>Nuestro Equipo</h3>
-          <div class="simple-team-grid">
-            <!-- Miembro 1 - Jerson -->
-            <div class="simple-team-member">
-              <img src="img/jerson.png" alt="Jerson Espitia" class="simple-member-img">
-              <h4 class="simple-member-name">Jerson Espitia</h4>
-              <p class="simple-member-role">Co-Fundador & Desarrollador</p>
+    <!-- Línea divisoria -->
+    <hr class="section-divider">
+
+    <!-- Sección Galería -->
+    <section id="galeria" class="section fade-in">
+      <div class="container text-center">
+        <h2 class="section-title">Momentos Fiesta Finder</h2>
+        <p class="section-description">Así se viven nuestras experiencias: luces, energía y mucha diversión.</p>
+        
+        <div class="gallery-container">
+          <div class="gallery-grid">
+            <!-- Fila 1 -->
+            <div class="gallery-item">
+              <img src="img/img1.gif" alt="Fiesta Festival EDM" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>Fiesta Festival EDM</h5>
+                <p>Más de 5,000 asistentes disfrutando de los mejores DJs</p>
+              </div>
             </div>
             
-            <!-- Miembro 2 - Cristian -->
-            <div class="simple-team-member">
-              <img src="img/alejo.png" alt="Cristian Valdés" class="simple-member-img">
-              <h4 class="simple-member-name">Cristian Valdés</h4>
-              <p class="simple-member-role">CEO & Arquitecto Software</p>
+            <div class="gallery-item">
+              <img src="img/img5.webp" alt="Club Nocturno Premium" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>Club Nocturno Premium</h5>
+                <p>Experiencias VIP con servicio personalizado</p>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <img src="img/img3.gif" alt="Terraza Sunset Sessions" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>Terraza Sunset Sessions</h5>
+                <p>Atardeceres mágicos con los mejores cócteles</p>
+              </div>
+            </div>
+            
+            <!-- Fila 2 -->
+            <div class="gallery-item">
+              <img src="img/img4.gif" alt="Discotecas Exclusivas" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>Discotecas Exclusivas</h5>
+                <p>Los mejores ambientes para bailar toda la noche</p>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <img src="img/img2.gif" alt="Conciertos En Vivo" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>Conciertos En Vivo</h5>
+                <p>Artistas nacionales e internacionales</p>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <img src="img/img6.webp" alt="Bares Temáticos" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>Bares Temáticos</h5>
+                <p>Ambientes únicos para cada gusto</p>
+              </div>
+            </div>
+            
+            <!-- Fila 3 -->
+            <div class="gallery-item">
+              <img src="img/img7.jpg" alt="After Parties" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>After Parties</h5>
+                <p>La fiesta continúa hasta el amanecer</p>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <img src="img/img9.avif" alt="Eventos Especiales" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <h5>Eventos Especiales</h5>
+                <p>Celebraciones únicas e inolvidables</p>
+              </div>
+            </div>
+            
+            <!-- Botón para ver más eventos -->
+            <div class="gallery-item download-item">
+              <div class="download-content">
+                <i class="fas fa-plus-circle"></i>
+                <h3>¿Quieres ver más eventos?</h3>
+                <p>Descarga la app para descubrir todos los eventos disponibles</p>
+                <button class="btn btn-download-gallery" data-bs-toggle="modal" data-bs-target="#downloadModal">
+                  Descargar App
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ==================== BENEFICIOS ==================== -->
-  <section id="beneficios" class="section bg-dark-blue fade-in">
-    <div class="container text-center">
-      <h2 class="section-title">¿Por Qué Usar Fiesta Finder?</h2>
-      <div class="row mt-5">
-        <div class="col-md-3 mb-4">
-          <div class="benefit-card card-blue">
-            <div class="benefit-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h4>Eventos Cercanos</h4>
-            <p>Filtra por ubicación, fecha o categoría y encuentra lo mejor cerca de ti. Nuestro algoritmo geolocalizado te muestra opciones en tiempo real basadas en tu posición actual.</p>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="benefit-card card-purple">
-            <div class="benefit-icon">
-              <i class="fas fa-magic"></i>
-            </div>
-            <h4>Experiencia Personalizada</h4>
-            <p>Recibe recomendaciones basadas en tus gustos, asistencias previas y ratings. Aprende de tus preferencias para ofrecerte cada vez mejores opciones de entretenimiento.</p>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="benefit-card card-teal">
-            <div class="benefit-icon">
-              <i class="fas fa-headset"></i>
-            </div>
-            <h4>Soporte en Tiempo Real</h4>
-            <p>Asistencia inmediata 24/7 por chat o correo. Resolvemos dudas, problemas de reservas o cualquier inconveniente que tengas durante tu experiencia de fiesta.</p>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="benefit-card card-pink">
-            <div class="benefit-icon">
-              <i class="fas fa-globe-americas"></i>
-            </div>
-            <h4>Diversidad de Experiencias</h4>
-            <p>Fiesta Finder te ofrece más que fiestas. Ya que con sus conciertos, gastrobares, festivales, eventos culturales y más. Es Todo lo que necesitas para disfrutar y descubrir Bogotá.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Línea divisoria -->
-  <hr class="section-divider">
-
-  <!-- ==================== GALERÍA ==================== -->
-  <section id="galeria" class="section fade-in">
-    <div class="container text-center">
-      <h2 class="section-title">Momentos Fiesta Finder</h2>
-      <p class="section-description">Así se viven nuestras experiencias: luces, energía y mucha diversión.</p>
-      
-      <div class="gallery-container">
-        <div class="gallery-grid">
-          <!-- Fila 1 -->
-          <div class="gallery-item">
-            <img src="img/img1.gif" alt="Evento 1" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>Fiesta Festival EDM</h5>
-              <p>Más de 5,000 asistentes disfrutando de los mejores DJs</p>
-            </div>
-          </div>
-          
-          <div class="gallery-item">
-            <img src="img/img5.webp" alt="Evento 2" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>Club Nocturno Premium</h5>
-              <p>Experiencias VIP con servicio personalizado</p>
-            </div>
-          </div>
-          
-          <div class="gallery-item">
-            <img src="img/img3.gif" alt="Evento 3" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>Terraza Sunset Sessions</h5>
-              <p>Atardeceres mágicos con los mejores cócteles</p>
-            </div>
-          </div>
-          
-          <!-- Fila 2 -->
-          <div class="gallery-item">
-            <img src="img/img4.gif" alt="Evento 4" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>Discotecas Exclusivas</h5>
-              <p>Los mejores ambientes para bailar toda la noche</p>
-            </div>
-          </div>
-          
-          <div class="gallery-item">
-            <img src="img/img2.gif" alt="Evento 5" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>Conciertos En Vivo</h5>
-              <p>Artistas nacionales e internacionales en los mejores recintos</p>
-            </div>
-          </div>
-          
-          <div class="gallery-item">
-            <img src="img/img6.webp" alt="Evento 6" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>Bares Temáticos</h5>
-              <p>Ambientes únicos para cada gusto</p>
-            </div>
-          </div>
-          
-          <!-- Fila 3 -->
-          <div class="gallery-item">
-            <img src="img/img7.jpg" alt="Evento 7" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>After Parties</h5>
-              <p>La fiesta continúa hasta el amanecer</p>
-            </div>
-          </div>
-          
-          <div class="gallery-item">
-            <img src="img/img9.avif" alt="Evento 8" loading="lazy" decoding="async">
-            <div class="gallery-overlay">
-              <h5>Eventos Especiales</h5>
-              <p>Celebraciones únicas e inolvidables</p>
-            </div>
-          </div>
-          
-          <!-- Botón para ver más eventos -->
-          <div class="gallery-item download-item">
-            <div class="download-content">
-              <i class="fas fa-plus-circle"></i>
-              <h3>¿Quieres ver más eventos?</h3>
-              <p>Descarga la app para descubrir todos los eventos disponibles</p>
-              <button class="btn btn-download-gallery" data-bs-toggle="modal" data-bs-target="#downloadModal">
-                Descargar App
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <!-- ==================== CONTACTO ==================== -->
   <section id="contacto" class="section bg-dark-blue fade-in">
@@ -383,10 +412,12 @@
     </div>
   </section>
 
-  <!-- Línea divisoria -->
-  <hr class="section-divider">
 
-  <!-- FOOTER -->
+    <!-- Línea divisoria -->
+    <hr class="section-divider">
+  </main>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="waves">
       <div class="wave" id="wave1"></div>
@@ -431,12 +462,12 @@
     
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2025 Fiesta Finder. Todos los derechos reservados.</p>
+        <p>&copy; <span id="currentYear"></span> Fiesta Finder. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== MODAL DESCARGAR ==================== -->
+    <!-- ==================== MODAL DESCARGAR ==================== -->
   <div class="modal fade" id="downloadModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content download-modal-content">
@@ -466,191 +497,164 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
+  <!-- Scripts al final del body para mejor performance -->
+  <!-- Bootstrap Bundle con Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <!-- Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
+  
   <script>
-    // ==================== INTERACTIVIDAD SOBRE NOSOTROS ====================
-    document.addEventListener('DOMContentLoaded', function() {
-      // Animación del título con anime.js
-      anime({
-        targets: '.history-title',
-        translateY: [-50, 0],
-        opacity: [0, 1],
-        duration: 1200,
-        easing: 'easeOutExpo'
-      });
+  // =============================================
+// FIESTA FINDER - SCRIPTS PRINCIPALES
+// =============================================
 
-      // Configuración de particles.js solo para desktop
-      if (window.innerWidth > 992 && document.getElementById('particles-js')) {
-        particlesJS('particles-js', {
-          particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: "#2ad8d8" },
-            shape: { type: "circle" },
-            opacity: { value: 0.5, random: true },
-            size: { value: 3, random: true },
-            line_linked: { enable: true, distance: 150, color: "#2ad8d8", opacity: 0.4, width: 1 },
-            move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
+document.addEventListener('DOMContentLoaded', function() {
+  // Actualizar año en el footer
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  
+  // Inicializar particles.js solo en desktop
+  if (window.innerWidth > 992 && document.getElementById('particles-js')) {
+    // Cargar particles.js dinámicamente
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    script.onload = function() {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#2ad8d8" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: { enable: true, distance: 150, color: "#2ad8d8", opacity: 0.4, width: 1 },
+          move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
           },
-          interactivity: {
-            detect_on: "canvas",
-            events: {
-              onhover: { enable: true, mode: "repulse" },
-              onclick: { enable: true, mode: "push" },
-              resize: true
-            },
-            modes: {
-              repulse: { distance: 100, duration: 0.4 },
-              push: { particles_nb: 4 }
-            }
-          },
-          retina_detect: true
-        });
-      }
-
-      // ==================== CAROUSEL SOBRE NOSOTROS ====================
-      const slides = document.querySelectorAll('.about-slide');
-      const prevBtn = document.querySelector('.prev-arrow');
-      const nextBtn = document.querySelector('.next-arrow');
-      let currentIndex = 0;
-      let autoSlideInterval;
-
-      function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[index].classList.add('active');
-      }
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-        resetAutoSlide();
-      }
-
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-        resetAutoSlide();
-      }
-
-      function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 8000);
-      }
-
-      function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-      }
-
-      // Solo inicializar carrusel en desktop
-      if (window.innerWidth > 992) {
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-        showSlide(0);
-        startAutoSlide();
-
-        const carousel = document.querySelector('.about-carousel');
-        carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-        carousel.addEventListener('mouseleave', startAutoSlide);
-      }
-
-      // ==================== ANIMACIÓN TARJETAS EQUIPO (MÓVIL) ====================
-      const teamMembers = document.querySelectorAll('.simple-team-member');
-      if (teamMembers.length > 0 && window.innerWidth <= 992) {
-        teamMembers.forEach((member, index) => {
-          // Retraso escalonado para la animación
-          setTimeout(() => {
-            member.style.opacity = '0';
-            member.style.transform = 'translateY(20px)';
-            member.style.transition = 'all 0.5s ease-out';
-            
-            setTimeout(() => {
-              member.style.opacity = '1';
-              member.style.transform = 'translateY(0)';
-            }, 100);
-          }, index * 200);
-        });
-      }
-    });
-
-    // ==================== MANEJO DE REDIMENSIONAMIENTO ====================
-    window.addEventListener('resize', function() {
-      // Reiniciar particles.js si cambiamos a desktop
-      if (window.innerWidth > 992 && document.getElementById('particles-js')) {
-        if (typeof particlesJS !== 'undefined' && !document.querySelector('#particles-js > canvas')) {
-          particlesJS('particles-js', {
-            particles: {
-              number: { value: 80, density: { enable: true, value_area: 800 } },
-              color: { value: "#2ad8d8" },
-              shape: { type: "circle" },
-              opacity: { value: 0.5, random: true },
-              size: { value: 3, random: true },
-              line_linked: { enable: true, distance: 150, color: "#2ad8d8", opacity: 0.4, width: 1 },
-              move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: {
-                onhover: { enable: true, mode: "repulse" },
-                onclick: { enable: true, mode: "push" },
-                resize: true
-              },
-              modes: {
-                repulse: { distance: 100, duration: 0.4 },
-                push: { particles_nb: 4 }
-              }
-            },
-            retina_detect: true
-          });
-        }
-      }
-    });
-
-    // Scroll suave para galería
-    document.querySelectorAll('.gallery-container').forEach(container => {
-      container.addEventListener('wheel', function(e) {
-        if (e.deltaY > 0) {
-          this.scrollTop += 50;
-        } else {
-          this.scrollTop -= 50;
-        }
-        e.preventDefault();
+          modes: {
+            repulse: { distance: 100, duration: 0.4 },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
       });
-    });
+    };
+    document.body.appendChild(script);
+  }
 
-    // Scroll suave para flecha indicadora
-    document.querySelector('.scroll-indicator').addEventListener('click', () => {
-      window.scrollTo({
-        top: document.querySelector('#sobre-nosotros').offsetTop,
-        behavior: 'smooth'
-      });
-    });
+  // Carrusel Sobre Nosotros (solo desktop)
+  if (window.innerWidth > 992) {
+    const slides = document.querySelectorAll('.about-slide');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
+    let currentIndex = 0;
+    let autoSlideInterval;
 
-    // Lazy load mejorado
-    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-      img.addEventListener('load', () => {
-        img.classList.add('loaded');
-      });
-      if (img.complete) img.classList.add('loaded');
-    });
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
 
-    // ==================== ANIMACIÓN SCROLL SECCIONES ====================
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-    
-    document.querySelectorAll('.fade-in').forEach(section => {
-      observer.observe(section);
-      section.classList.add('transition-ready');
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+      resetAutoSlide();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+      resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 8000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    showSlide(0);
+    startAutoSlide();
+
+    const carousel = document.querySelector('.about-carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    carousel.addEventListener('mouseleave', startAutoSlide);
+  }
+
+  // Animación tarjetas equipo en móvil
+  const teamMembers = document.querySelectorAll('.simple-team-member');
+  if (teamMembers.length > 0 && window.innerWidth <= 992) {
+    teamMembers.forEach((member, index) => {
+      setTimeout(() => {
+        member.style.opacity = '0';
+        member.style.transform = 'translateY(20px)';
+        member.style.transition = 'all 0.5s ease-out';
+        
+        setTimeout(() => {
+          member.style.opacity = '1';
+          member.style.transform = 'translateY(0)';
+        }, 100);
+      }, index * 200);
     });
-  </script>
+  }
+
+  // Scroll suave para flecha indicadora
+  document.querySelector('.scroll-indicator').addEventListener('click', () => {
+    document.querySelector('#sobre-nosotros').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  });
+
+  // Lazy load mejorado
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    img.addEventListener('load', () => {
+      img.classList.add('loaded');
+    });
+    if (img.complete) img.classList.add('loaded');
+  });
+
+  // Animación al hacer scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  document.querySelectorAll('.fade-in').forEach(section => {
+    observer.observe(section);
+    section.classList.add('transition-ready');
+  });
+
+  // Manejo del formulario de contacto
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Aquí iría la lógica para enviar el formulario
+      alert('Mensaje enviado con éxito!');
+      this.reset();
+    });
+  }
+});
+
+// Manejo del redimensionamiento
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 992 && document.getElementById('particles-js') && !document.querySelector('#particles-js > canvas')) {
+    // Reiniciar particles.js si es necesario
+  }
+});
+</script>
+
+  <!-- Scripts personalizados -->
+  <script src="js/main.js"></script>
 </body>
 </html>
